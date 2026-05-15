@@ -1,0 +1,1143 @@
+{
+  "dependencies": {
+    "appsflyer-unity-plugin": {
+      "version": "6.17.1",
+      "depth": 0,
+      "source": "registry",
+      "dependencies": {
+        "com.google.external-dependency-manager": "1.2.186"
+      },
+      "url": "https://august.amberweather.com/nexus/repository/unity_group"
+    },
+    "com.aframework.analysis": {
+      "version": "2.15.0",
+      "depth": 0,
+      "source": "registry",
+      "dependencies": {
+        "com.aframework.core": "2.0.10",
+        "com.amber.game.services": "1.4.0",
+        "com.amber.archive": "1.1.7",
+        "com.amber.async.dispatcher": "2.0.1",
+        "com.amber.lifecycle": "1.0.2",
+        "com.google.firebase.analytics": "12.1.0",
+        "com.google.firebase.app": "12.1.0",
+        "com.google.firebase.crashlytics": "12.1.0",
+        "com.amber.initializer": "2.0.7",
+        "com.amber.runtime.environment": "1.0.8"
+      },
+      "url": "https://august.amberweather.com/nexus/repository/unity_group"
+    },
+    "com.aframework.core": {
+      "version": "2.0.10",
+      "depth": 0,
+      "source": "registry",
+      "dependencies": {
+        "com.amber.initializer": "2.0.7",
+        "com.amber.async.dispatcher": "2.0.1",
+        "com.amber.game.services": "1.2.2"
+      },
+      "url": "https://august.amberweather.com/nexus/repository/unity_group"
+    },
+    "com.aframework.extension.core-event": {
+      "version": "2.1.0",
+      "depth": 0,
+      "source": "registry",
+      "dependencies": {
+        "com.aframework.core": "2.0.10",
+        "com.amber.game.services": "1.2.2",
+        "com.aframework.analysis": "2.9.0",
+        "com.aframework.remote-config": "2.0.5",
+        "com.aframework.extension.remote-controller": "1.0.0"
+      },
+      "url": "https://august.amberweather.com/nexus/repository/unity_group"
+    },
+    "com.aframework.extension.remote-controller": {
+      "version": "1.0.0",
+      "depth": 0,
+      "source": "registry",
+      "dependencies": {
+        "com.aframework.core": "2.0.10",
+        "com.amber.game.services": "1.2.2",
+        "com.amber.archive": "1.1.7",
+        "com.aframework.analysis": "2.9.0",
+        "com.aframework.remote-config": "2.0.5"
+      },
+      "url": "https://august.amberweather.com/nexus/repository/unity_group"
+    },
+    "com.aframework.extension.tag-event": {
+      "version": "2.1.6",
+      "depth": 0,
+      "source": "registry",
+      "dependencies": {
+        "com.aframework.core": "2.0.10",
+        "com.aframework.analysis": "2.9.0",
+        "com.aframework.remote-config": "2.0.5",
+        "com.amber.async.dispatcher": "2.0.1",
+        "com.amber.apex.mediation": "7.5.9",
+        "com.amber.archive": "1.1.7"
+      },
+      "url": "https://august.amberweather.com/nexus/repository/unity_group"
+    },
+    "com.aframework.extension.user-value-event": {
+      "version": "2.3.0",
+      "depth": 0,
+      "source": "registry",
+      "dependencies": {
+        "com.aframework.core": "2.0.9",
+        "com.aframework.analysis": "2.11.0",
+        "com.aframework.remote-config": "2.0.2",
+        "com.aframework.extension.remote-controller": "1.0.0"
+      },
+      "url": "https://august.amberweather.com/nexus/repository/unity_group"
+    },
+    "com.aframework.notifications": {
+      "version": "2.1.0",
+      "depth": 0,
+      "source": "registry",
+      "dependencies": {
+        "com.aframework.core": "2.0.10",
+        "com.unity.mobile.notifications": "2.4.1",
+        "com.aframework.analysis": "2.10.0",
+        "com.amber.initializer": "2.0.7",
+        "com.amber.game.services": "1.3.0",
+        "com.amber.async.dispatcher": "2.0.2"
+      },
+      "url": "https://august.amberweather.com/nexus/repository/unity_group"
+    },
+    "com.aframework.remote-config": {
+      "version": "2.0.6",
+      "depth": 0,
+      "source": "registry",
+      "dependencies": {
+        "com.aframework.core": "2.0.0",
+        "com.amber.game.services": "1.0.0"
+      },
+      "url": "https://august.amberweather.com/nexus/repository/unity_group"
+    },
+    "com.amber.addressable-pak": {
+      "version": "0.1.1",
+      "depth": 0,
+      "source": "registry",
+      "dependencies": {
+        "com.unity.sharp-zip-lib": "1.3.7",
+        "com.unity.scriptablebuildpipeline": "1.21.22",
+        "com.unity.addressables": "1.21.20",
+        "com.amber.daisy.support": "2.9.6"
+      },
+      "url": "https://august.amberweather.com/nexus/repository/unity_group"
+    },
+    "com.amber.apex.mediation": {
+      "version": "7.9.2",
+      "depth": 0,
+      "source": "registry",
+      "dependencies": {
+        "com.google.external-dependency-manager": "1.2.186",
+        "com.unity.nuget.newtonsoft-json": "2.0.0",
+        "com.amber.lib.unity.sqlite": "1.0.6",
+        "com.amber.lib.unity.ump": "9.2.0-release.3",
+        "com.amber.game.services": "1.3.0",
+        "com.amber.logger": "2.2.0",
+        "com.amber.async.dispatcher": "2.0.1",
+        "com.amber.runtime.environment": "1.0.8",
+        "com.aframework.core": "2.0.10",
+        "com.aframework.analysis": "2.10.0",
+        "com.aframework.remote-config": "2.0.5",
+        "com.google.firebase.installations": "12.1.0"
+      },
+      "url": "https://august.amberweather.com/nexus/repository/unity_group"
+    },
+    "com.amber.archive": {
+      "version": "1.1.9",
+      "depth": 0,
+      "source": "registry",
+      "dependencies": {},
+      "url": "https://august.amberweather.com/nexus/repository/unity_group"
+    },
+    "com.amber.async.dispatcher": {
+      "version": "2.0.2",
+      "depth": 1,
+      "source": "registry",
+      "dependencies": {
+        "com.amber.game.services": "1.0.0"
+      },
+      "url": "https://august.amberweather.com/nexus/repository/unity_group"
+    },
+    "com.amber.daisy.support": {
+      "version": "2.9.13",
+      "depth": 0,
+      "source": "registry",
+      "dependencies": {
+        "com.unity.nuget.newtonsoft-json": "2.0.0"
+      },
+      "url": "https://august.amberweather.com/nexus/repository/unity_group"
+    },
+    "com.amber.experiment": {
+      "version": "2.0.8",
+      "depth": 0,
+      "source": "registry",
+      "dependencies": {
+        "com.amber.archive": "1.1.6",
+        "com.aframework.analysis": "2.9.0",
+        "com.aframework.remote-config": "2.0.1",
+        "com.aframework.core": "2.0.3",
+        "com.amber.udb": "1.0.2",
+        "com.amber.initializer": "2.0.0"
+      },
+      "url": "https://august.amberweather.com/nexus/repository/unity_group"
+    },
+    "com.amber.game.services": {
+      "version": "1.4.0",
+      "depth": 0,
+      "source": "registry",
+      "dependencies": {
+        "com.unity.nuget.mono-cecil": "1.10.2",
+        "com.unity.nuget.newtonsoft-json": "2.0.0"
+      },
+      "url": "https://august.amberweather.com/nexus/repository/unity_group"
+    },
+    "com.amber.initializer": {
+      "version": "2.0.9",
+      "depth": 0,
+      "source": "registry",
+      "dependencies": {
+        "com.amber.game.services": "1.4.0"
+      },
+      "url": "https://august.amberweather.com/nexus/repository/unity_group"
+    },
+    "com.amber.lib.unity.sqlite": {
+      "version": "1.0.7",
+      "depth": 0,
+      "source": "registry",
+      "dependencies": {},
+      "url": "https://august.amberweather.com/nexus/repository/unity_group"
+    },
+    "com.amber.lib.unity.ump": {
+      "version": "9.2.0-release.3",
+      "depth": 1,
+      "source": "registry",
+      "dependencies": {
+        "com.amber.game.services": "1.0.5",
+        "com.amber.async.dispatcher": "2.0.1",
+        "com.google.external-dependency-manager": "1.2.181",
+        "com.google.firebase.analytics": "12.1.0"
+      },
+      "url": "https://august.amberweather.com/nexus/repository/unity_group"
+    },
+    "com.amber.lifecycle": {
+      "version": "1.0.2",
+      "depth": 1,
+      "source": "registry",
+      "dependencies": {},
+      "url": "https://august.amberweather.com/nexus/repository/unity_group"
+    },
+    "com.amber.logger": {
+      "version": "2.3.0",
+      "depth": 0,
+      "source": "registry",
+      "dependencies": {
+        "com.amber.udb": "1.1.5",
+        "com.amber.game.services": "1.4.0"
+      },
+      "url": "https://august.amberweather.com/nexus/repository/unity_group"
+    },
+    "com.amber.metadata.encryption": {
+      "version": "1.0.9",
+      "depth": 0,
+      "source": "registry",
+      "dependencies": {
+        "com.amber.daisy.support": "2.9.6"
+      },
+      "url": "https://august.amberweather.com/nexus/repository/unity_group"
+    },
+    "com.amber.runtime.environment": {
+      "version": "1.1.0",
+      "depth": 0,
+      "source": "registry",
+      "dependencies": {},
+      "url": "https://august.amberweather.com/nexus/repository/unity_group"
+    },
+    "com.amber.target33.compat": {
+      "version": "2.0.1",
+      "depth": 0,
+      "source": "registry",
+      "dependencies": {
+        "com.google.external-dependency-manager": "1.2.165",
+        "com.amber.initializer": "2.0.0",
+        "com.amber.async.dispatcher": "2.0.0"
+      },
+      "url": "https://august.amberweather.com/nexus/repository/unity_group"
+    },
+    "com.amber.teamcitylocalpack": {
+      "version": "1.1.0",
+      "depth": 0,
+      "source": "registry",
+      "dependencies": {},
+      "url": "https://august.amberweather.com/nexus/repository/unity_group"
+    },
+    "com.amber.udb": {
+      "version": "1.1.8",
+      "depth": 0,
+      "source": "registry",
+      "dependencies": {},
+      "url": "https://august.amberweather.com/nexus/repository/unity_group"
+    },
+    "com.amber.ui-safearea": {
+      "version": "0.0.3",
+      "depth": 0,
+      "source": "registry",
+      "dependencies": {},
+      "url": "https://august.amberweather.com/nexus/repository/unity_group"
+    },
+    "com.amber.universallinks": {
+      "version": "1.0.0",
+      "depth": 0,
+      "source": "registry",
+      "dependencies": {},
+      "url": "https://august.amberweather.com/nexus/repository/unity_group"
+    },
+    "com.amber.vfxshader": {
+      "version": "file:../Tools/VFXShader",
+      "depth": 0,
+      "source": "local",
+      "dependencies": {}
+    },
+    "com.code-philosophy.luban": {
+      "version": "file:com.code-philosophy.luban@de0348c453",
+      "depth": 0,
+      "source": "embedded",
+      "dependencies": {}
+    },
+    "com.coffee.softmask-for-ugui": {
+      "version": "https://github.com/mob-sakai/SoftMaskForUGUI.git?path=Packages/src#3.3.4",
+      "depth": 0,
+      "source": "git",
+      "dependencies": {
+        "com.unity.ugui": "1.0.0"
+      },
+      "hash": "f9868197c056b3d178852c7fc78baf8720bf29c8"
+    },
+    "com.coffee.ui-effect": {
+      "version": "https://github.com/mob-sakai/UIEffect.git?path=Packages/src#5.9.7",
+      "depth": 0,
+      "source": "git",
+      "dependencies": {
+        "com.unity.ugui": "1.0.0"
+      },
+      "hash": "a975cf347a7ede954b2370703052f9545716fbaa"
+    },
+    "com.coffee.ui-particle": {
+      "version": "https://github.com/mob-sakai/ParticleEffectForUGUI.git#4.11.2",
+      "depth": 0,
+      "source": "git",
+      "dependencies": {
+        "com.unity.ugui": "1.0.0",
+        "com.unity.modules.particlesystem": "1.0.0"
+      },
+      "hash": "4b98abd7469b10d55c9c623830cb6e1518f72731"
+    },
+    "com.cysharp.csprojmodifier": {
+      "version": "https://github.com/Cysharp/CsprojModifier.git?path=src/CsprojModifier/Assets/CsprojModifier",
+      "depth": 0,
+      "source": "git",
+      "dependencies": {},
+      "hash": "e82080dac67f22fa0ef0b7c0aceadda92df76ec3"
+    },
+    "com.cysharp.messagepipe": {
+      "version": "https://github.com/Cysharp/MessagePipe.git?path=src/MessagePipe.Unity/Assets/Plugins/MessagePipe#1.8.1",
+      "depth": 0,
+      "source": "git",
+      "dependencies": {},
+      "hash": "e901746b927bcd84ad94d642512a7a7a7600d15b"
+    },
+    "com.cysharp.messagepipe.vcontainer": {
+      "version": "https://github.com/Cysharp/MessagePipe.git?path=src/MessagePipe.Unity/Assets/Plugins/MessagePipe.VContainer#1.8.1",
+      "depth": 0,
+      "source": "git",
+      "dependencies": {},
+      "hash": "e901746b927bcd84ad94d642512a7a7a7600d15b"
+    },
+    "com.cysharp.r3": {
+      "version": "https://github.com/Cysharp/R3.git?path=src/R3.Unity/Assets/R3.Unity#1.3.0",
+      "depth": 0,
+      "source": "git",
+      "dependencies": {
+        "com.unity.modules.imgui": "1.0.0"
+      },
+      "hash": "329ca7915713417f2e0837b0e0a80b4da074db4a"
+    },
+    "com.cysharp.unitask": {
+      "version": "https://github.com/Cysharp/UniTask.git?path=src/UniTask/Assets/Plugins/UniTask#2.5.10",
+      "depth": 0,
+      "source": "git",
+      "dependencies": {},
+      "hash": "7c0f199fe0d3fc528024488ccd671e6c7b27745b"
+    },
+    "com.cysharp.zstring": {
+      "version": "https://github.com/Cysharp/ZString.git?path=src/ZString.Unity/Assets/Scripts/ZString#2.6.0",
+      "depth": 0,
+      "source": "git",
+      "dependencies": {},
+      "hash": "3156134075b89a162fe95350a2e92a4c85ccca59"
+    },
+    "com.esotericsoftware.spine.spine-csharp": {
+      "version": "4.2.36",
+      "depth": 0,
+      "source": "registry",
+      "dependencies": {},
+      "url": "https://august.amberweather.com/nexus/repository/unity_group"
+    },
+    "com.esotericsoftware.spine.spine-unity": {
+      "version": "4.2.100",
+      "depth": 0,
+      "source": "registry",
+      "dependencies": {
+        "com.unity.ugui": "1.0.0",
+        "com.unity.modules.animation": "1.0.0",
+        "com.unity.modules.physics": "1.0.0",
+        "com.unity.modules.physics2d": "1.0.0",
+        "com.esotericsoftware.spine.spine-csharp": "4.2.0"
+      },
+      "url": "https://august.amberweather.com/nexus/repository/unity_group"
+    },
+    "com.esotericsoftware.spine.timeline": {
+      "version": "4.2.15",
+      "depth": 0,
+      "source": "registry",
+      "dependencies": {
+        "com.unity.timeline": "1.2.10",
+        "com.esotericsoftware.spine.spine-unity": "4.2.13"
+      },
+      "url": "https://august.amberweather.com/nexus/repository/unity_group"
+    },
+    "com.esotericsoftware.spine.urp-shaders": {
+      "version": "4.2.43",
+      "depth": 0,
+      "source": "registry",
+      "dependencies": {
+        "com.unity.render-pipelines.universal": "7.1.5"
+      },
+      "url": "https://august.amberweather.com/nexus/repository/unity_group"
+    },
+    "com.facebook.sdk": {
+      "version": "18.0.3-release.1",
+      "depth": 0,
+      "source": "registry",
+      "dependencies": {
+        "com.google.external-dependency-manager": "1.2.186"
+      },
+      "url": "https://august.amberweather.com/nexus/repository/unity_group"
+    },
+    "com.google.external-dependency-manager": {
+      "version": "1.2.186",
+      "depth": 1,
+      "source": "registry",
+      "dependencies": {},
+      "url": "https://august.amberweather.com/nexus/repository/unity_group"
+    },
+    "com.google.firebase.analytics": {
+      "version": "12.10.1",
+      "depth": 0,
+      "source": "registry",
+      "dependencies": {
+        "com.google.firebase.app": "12.10.1"
+      },
+      "url": "https://august.amberweather.com/nexus/repository/unity_group"
+    },
+    "com.google.firebase.app": {
+      "version": "12.10.1",
+      "depth": 0,
+      "source": "registry",
+      "dependencies": {
+        "com.google.external-dependency-manager": "1.2.186"
+      },
+      "url": "https://august.amberweather.com/nexus/repository/unity_group"
+    },
+    "com.google.firebase.crashlytics": {
+      "version": "12.10.1",
+      "depth": 0,
+      "source": "registry",
+      "dependencies": {
+        "com.google.firebase.app": "12.10.1"
+      },
+      "url": "https://august.amberweather.com/nexus/repository/unity_group"
+    },
+    "com.google.firebase.installations": {
+      "version": "12.10.1",
+      "depth": 0,
+      "source": "registry",
+      "dependencies": {
+        "com.google.firebase.app": "12.10.1"
+      },
+      "url": "https://august.amberweather.com/nexus/repository/unity_group"
+    },
+    "com.google.firebase.messaging": {
+      "version": "12.10.1",
+      "depth": 0,
+      "source": "registry",
+      "dependencies": {
+        "com.google.firebase.app": "12.10.1"
+      },
+      "url": "https://august.amberweather.com/nexus/repository/unity_group"
+    },
+    "com.google.firebase.remote-config": {
+      "version": "12.10.1",
+      "depth": 0,
+      "source": "registry",
+      "dependencies": {
+        "com.google.firebase.app": "12.10.1"
+      },
+      "url": "https://august.amberweather.com/nexus/repository/unity_group"
+    },
+    "com.hamza.toastui": {
+      "version": "file:ToastUI",
+      "depth": 0,
+      "source": "embedded",
+      "dependencies": {}
+    },
+    "com.marijnzwemmer.unity-toolbar-extender": {
+      "version": "file:com.marijnzwemmer.unity-toolbar-extender@dbd76ed996",
+      "depth": 0,
+      "source": "embedded",
+      "dependencies": {}
+    },
+    "com.tayx.graphy": {
+      "version": "3.0.5",
+      "depth": 0,
+      "source": "registry",
+      "dependencies": {},
+      "url": "https://package.openupm.com"
+    },
+    "com.thinkingdata.analytics": {
+      "version": "https://github.com/ThinkingDataAnalytics/unity-sdk.git#v3.1.0",
+      "depth": 0,
+      "source": "git",
+      "dependencies": {},
+      "hash": "9a2f855c68087127205c49c74b9f921b5b1cfade"
+    },
+    "com.unity.2d.animation": {
+      "version": "9.2.0",
+      "depth": 1,
+      "source": "registry",
+      "dependencies": {
+        "com.unity.2d.common": "8.1.0",
+        "com.unity.2d.sprite": "1.0.0",
+        "com.unity.collections": "1.1.0",
+        "com.unity.modules.animation": "1.0.0",
+        "com.unity.modules.uielements": "1.0.0"
+      },
+      "url": "https://packages.unity.cn"
+    },
+    "com.unity.2d.aseprite": {
+      "version": "1.1.9",
+      "depth": 1,
+      "source": "registry",
+      "dependencies": {
+        "com.unity.2d.common": "6.0.6",
+        "com.unity.2d.sprite": "1.0.0",
+        "com.unity.mathematics": "1.2.6",
+        "com.unity.modules.animation": "1.0.0"
+      },
+      "url": "https://packages.unity.cn"
+    },
+    "com.unity.2d.common": {
+      "version": "8.1.0",
+      "depth": 2,
+      "source": "registry",
+      "dependencies": {
+        "com.unity.burst": "1.7.3",
+        "com.unity.2d.sprite": "1.0.0",
+        "com.unity.mathematics": "1.1.0",
+        "com.unity.modules.animation": "1.0.0",
+        "com.unity.modules.uielements": "1.0.0"
+      },
+      "url": "https://packages.unity.cn"
+    },
+    "com.unity.2d.pixel-perfect": {
+      "version": "5.1.0",
+      "depth": 1,
+      "source": "registry",
+      "dependencies": {
+        "com.unity.modules.imgui": "1.0.0"
+      },
+      "url": "https://packages.unity.cn"
+    },
+    "com.unity.2d.psdimporter": {
+      "version": "8.1.0",
+      "depth": 1,
+      "source": "registry",
+      "dependencies": {
+        "com.unity.2d.common": "8.1.0",
+        "com.unity.2d.sprite": "1.0.0",
+        "com.unity.2d.animation": "9.2.0"
+      },
+      "url": "https://packages.unity.cn"
+    },
+    "com.unity.2d.sprite": {
+      "version": "1.0.0",
+      "depth": 1,
+      "source": "builtin",
+      "dependencies": {}
+    },
+    "com.unity.2d.spriteshape": {
+      "version": "9.1.0",
+      "depth": 1,
+      "source": "registry",
+      "dependencies": {
+        "com.unity.2d.common": "8.1.0",
+        "com.unity.mathematics": "1.1.0",
+        "com.unity.modules.physics2d": "1.0.0"
+      },
+      "url": "https://packages.unity.cn"
+    },
+    "com.unity.2d.tilemap": {
+      "version": "1.0.0",
+      "depth": 1,
+      "source": "builtin",
+      "dependencies": {
+        "com.unity.modules.tilemap": "1.0.0",
+        "com.unity.modules.uielements": "1.0.0"
+      }
+    },
+    "com.unity.2d.tilemap.extras": {
+      "version": "3.1.3",
+      "depth": 1,
+      "source": "registry",
+      "dependencies": {
+        "com.unity.ugui": "1.0.0",
+        "com.unity.2d.tilemap": "1.0.0",
+        "com.unity.modules.tilemap": "1.0.0",
+        "com.unity.modules.jsonserialize": "1.0.0"
+      },
+      "url": "https://packages.unity.cn"
+    },
+    "com.unity.addressables": {
+      "version": "1.22.3",
+      "depth": 0,
+      "source": "registry",
+      "dependencies": {
+        "com.unity.scriptablebuildpipeline": "1.21.25",
+        "com.unity.modules.assetbundle": "1.0.0",
+        "com.unity.modules.imageconversion": "1.0.0",
+        "com.unity.modules.jsonserialize": "1.0.0",
+        "com.unity.modules.unitywebrequest": "1.0.0",
+        "com.unity.modules.unitywebrequestassetbundle": "1.0.0"
+      },
+      "url": "https://packages.unity.cn"
+    },
+    "com.unity.burst": {
+      "version": "1.8.21",
+      "depth": 1,
+      "source": "registry",
+      "dependencies": {
+        "com.unity.mathematics": "1.2.1",
+        "com.unity.modules.jsonserialize": "1.0.0"
+      },
+      "url": "https://packages.unity.cn"
+    },
+    "com.unity.cinemachine": {
+      "version": "2.10.3",
+      "depth": 0,
+      "source": "registry",
+      "dependencies": {
+        "com.unity.test-framework": "1.1.31"
+      },
+      "url": "https://packages.unity.cn"
+    },
+    "com.unity.collab-proxy": {
+      "version": "2.8.2",
+      "depth": 0,
+      "source": "registry",
+      "dependencies": {},
+      "url": "https://packages.unity.cn"
+    },
+    "com.unity.collections": {
+      "version": "1.2.4",
+      "depth": 2,
+      "source": "registry",
+      "dependencies": {
+        "com.unity.burst": "1.6.6",
+        "com.unity.test-framework": "1.1.31"
+      },
+      "url": "https://packages.unity.cn"
+    },
+    "com.unity.device-simulator.devices": {
+      "version": "1.0.0",
+      "depth": 0,
+      "source": "registry",
+      "dependencies": {},
+      "url": "https://packages.unity.cn"
+    },
+    "com.unity.ext.nunit": {
+      "version": "1.0.6",
+      "depth": 1,
+      "source": "registry",
+      "dependencies": {},
+      "url": "https://packages.unity.cn"
+    },
+    "com.unity.feature.2d": {
+      "version": "2.0.1",
+      "depth": 0,
+      "source": "builtin",
+      "dependencies": {
+        "com.unity.2d.animation": "9.2.0",
+        "com.unity.2d.pixel-perfect": "5.1.0",
+        "com.unity.2d.psdimporter": "8.1.0",
+        "com.unity.2d.sprite": "1.0.0",
+        "com.unity.2d.spriteshape": "9.1.0",
+        "com.unity.2d.tilemap": "1.0.0",
+        "com.unity.2d.tilemap.extras": "3.1.3",
+        "com.unity.2d.aseprite": "1.1.9"
+      }
+    },
+    "com.unity.ide.rider": {
+      "version": "3.0.36",
+      "depth": 0,
+      "source": "registry",
+      "dependencies": {
+        "com.unity.ext.nunit": "1.0.6"
+      },
+      "url": "https://packages.unity.cn"
+    },
+    "com.unity.ide.visualstudio": {
+      "version": "2.0.23",
+      "depth": 0,
+      "source": "registry",
+      "dependencies": {
+        "com.unity.test-framework": "1.1.9"
+      },
+      "url": "https://packages.unity.cn"
+    },
+    "com.unity.mathematics": {
+      "version": "1.2.6",
+      "depth": 1,
+      "source": "registry",
+      "dependencies": {},
+      "url": "https://packages.unity.cn"
+    },
+    "com.unity.mobile.notifications": {
+      "version": "2.4.1",
+      "depth": 1,
+      "source": "registry",
+      "dependencies": {
+        "com.unity.modules.androidjni": "1.0.0"
+      },
+      "url": "https://packages.unity.cn"
+    },
+    "com.unity.nuget.mono-cecil": {
+      "version": "1.11.4",
+      "depth": 1,
+      "source": "registry",
+      "dependencies": {},
+      "url": "https://packages.unity.cn"
+    },
+    "com.unity.nuget.newtonsoft-json": {
+      "version": "3.2.1",
+      "depth": 0,
+      "source": "registry",
+      "dependencies": {},
+      "url": "https://packages.unity.cn"
+    },
+    "com.unity.render-pipelines.core": {
+      "version": "14.0.12",
+      "depth": 1,
+      "source": "builtin",
+      "dependencies": {
+        "com.unity.ugui": "1.0.0",
+        "com.unity.modules.physics": "1.0.0",
+        "com.unity.modules.terrain": "1.0.0",
+        "com.unity.modules.jsonserialize": "1.0.0"
+      }
+    },
+    "com.unity.render-pipelines.universal": {
+      "version": "14.0.12",
+      "depth": 0,
+      "source": "builtin",
+      "dependencies": {
+        "com.unity.mathematics": "1.2.1",
+        "com.unity.burst": "1.8.9",
+        "com.unity.render-pipelines.core": "14.0.12",
+        "com.unity.shadergraph": "14.0.12",
+        "com.unity.render-pipelines.universal-config": "14.0.9"
+      }
+    },
+    "com.unity.render-pipelines.universal-config": {
+      "version": "14.0.10",
+      "depth": 1,
+      "source": "builtin",
+      "dependencies": {
+        "com.unity.render-pipelines.core": "14.0.10"
+      }
+    },
+    "com.unity.scriptablebuildpipeline": {
+      "version": "1.21.25",
+      "depth": 1,
+      "source": "registry",
+      "dependencies": {},
+      "url": "https://packages.unity.cn"
+    },
+    "com.unity.searcher": {
+      "version": "4.9.2",
+      "depth": 2,
+      "source": "registry",
+      "dependencies": {},
+      "url": "https://packages.unity.cn"
+    },
+    "com.unity.shadergraph": {
+      "version": "14.0.12",
+      "depth": 1,
+      "source": "builtin",
+      "dependencies": {
+        "com.unity.render-pipelines.core": "14.0.12",
+        "com.unity.searcher": "4.9.2"
+      }
+    },
+    "com.unity.sharp-zip-lib": {
+      "version": "1.3.7",
+      "depth": 1,
+      "source": "registry",
+      "dependencies": {},
+      "url": "https://packages.unity.cn"
+    },
+    "com.unity.sysroot": {
+      "version": "2.0.10",
+      "depth": 1,
+      "source": "registry",
+      "dependencies": {},
+      "url": "https://packages.unity.cn"
+    },
+    "com.unity.sysroot.linux-x86_64": {
+      "version": "2.0.9",
+      "depth": 1,
+      "source": "registry",
+      "dependencies": {
+        "com.unity.sysroot": "2.0.10"
+      },
+      "url": "https://packages.unity.cn"
+    },
+    "com.unity.test-framework": {
+      "version": "1.1.33",
+      "depth": 0,
+      "source": "registry",
+      "dependencies": {
+        "com.unity.ext.nunit": "1.0.6",
+        "com.unity.modules.imgui": "1.0.0",
+        "com.unity.modules.jsonserialize": "1.0.0"
+      },
+      "url": "https://packages.unity.cn"
+    },
+    "com.unity.textmeshpro": {
+      "version": "file:com.unity.textmeshpro@3.0.9",
+      "depth": 0,
+      "source": "embedded",
+      "dependencies": {
+        "com.unity.ugui": "1.0.0"
+      }
+    },
+    "com.unity.timeline": {
+      "version": "1.7.7",
+      "depth": 0,
+      "source": "registry",
+      "dependencies": {
+        "com.unity.modules.audio": "1.0.0",
+        "com.unity.modules.director": "1.0.0",
+        "com.unity.modules.animation": "1.0.0",
+        "com.unity.modules.particlesystem": "1.0.0"
+      },
+      "url": "https://packages.unity.cn"
+    },
+    "com.unity.toolchain.win-x86_64-linux-x86_64": {
+      "version": "2.0.10",
+      "depth": 0,
+      "source": "registry",
+      "dependencies": {
+        "com.unity.sysroot": "2.0.10",
+        "com.unity.sysroot.linux-x86_64": "2.0.9"
+      },
+      "url": "https://packages.unity.cn"
+    },
+    "com.unity.ugui": {
+      "version": "1.0.0",
+      "depth": 0,
+      "source": "builtin",
+      "dependencies": {
+        "com.unity.modules.ui": "1.0.0",
+        "com.unity.modules.imgui": "1.0.0"
+      }
+    },
+    "jp.co.cyberagent.unity-mobile-support-android-game": {
+      "version": "https://github.com/CyberAgentGameEntertainment/UnityMobileSupport.git?path=/Packages/MobileSupportAndroidGame",
+      "depth": 0,
+      "source": "git",
+      "dependencies": {},
+      "hash": "98810a1f315909cd78976c10fa13180be0a85990"
+    },
+    "jp.hadashikick.vcontainer": {
+      "version": "https://github.com/hadashiA/VContainer.git?path=VContainer/Assets/VContainer#1.17.0",
+      "depth": 0,
+      "source": "git",
+      "dependencies": {},
+      "hash": "177dbda557fd652ce7f5d1647a3621653e094373"
+    },
+    "lofelt.nicevibrations": {
+      "version": "file:NiceVibrations",
+      "depth": 0,
+      "source": "embedded",
+      "dependencies": {}
+    },
+    "odininspector": {
+      "version": "file:Sirenix",
+      "depth": 0,
+      "source": "embedded",
+      "dependencies": {}
+    },
+    "unidevframework": {
+      "version": "file:UniDevFramework",
+      "depth": 0,
+      "source": "embedded",
+      "dependencies": {}
+    },
+    "com.unity.modules.ai": {
+      "version": "1.0.0",
+      "depth": 0,
+      "source": "builtin",
+      "dependencies": {}
+    },
+    "com.unity.modules.androidjni": {
+      "version": "1.0.0",
+      "depth": 0,
+      "source": "builtin",
+      "dependencies": {}
+    },
+    "com.unity.modules.animation": {
+      "version": "1.0.0",
+      "depth": 0,
+      "source": "builtin",
+      "dependencies": {}
+    },
+    "com.unity.modules.assetbundle": {
+      "version": "1.0.0",
+      "depth": 0,
+      "source": "builtin",
+      "dependencies": {}
+    },
+    "com.unity.modules.audio": {
+      "version": "1.0.0",
+      "depth": 0,
+      "source": "builtin",
+      "dependencies": {}
+    },
+    "com.unity.modules.cloth": {
+      "version": "1.0.0",
+      "depth": 0,
+      "source": "builtin",
+      "dependencies": {
+        "com.unity.modules.physics": "1.0.0"
+      }
+    },
+    "com.unity.modules.director": {
+      "version": "1.0.0",
+      "depth": 0,
+      "source": "builtin",
+      "dependencies": {
+        "com.unity.modules.audio": "1.0.0",
+        "com.unity.modules.animation": "1.0.0"
+      }
+    },
+    "com.unity.modules.imageconversion": {
+      "version": "1.0.0",
+      "depth": 0,
+      "source": "builtin",
+      "dependencies": {}
+    },
+    "com.unity.modules.imgui": {
+      "version": "1.0.0",
+      "depth": 0,
+      "source": "builtin",
+      "dependencies": {}
+    },
+    "com.unity.modules.jsonserialize": {
+      "version": "1.0.0",
+      "depth": 0,
+      "source": "builtin",
+      "dependencies": {}
+    },
+    "com.unity.modules.particlesystem": {
+      "version": "1.0.0",
+      "depth": 0,
+      "source": "builtin",
+      "dependencies": {}
+    },
+    "com.unity.modules.physics": {
+      "version": "1.0.0",
+      "depth": 0,
+      "source": "builtin",
+      "dependencies": {}
+    },
+    "com.unity.modules.physics2d": {
+      "version": "1.0.0",
+      "depth": 0,
+      "source": "builtin",
+      "dependencies": {}
+    },
+    "com.unity.modules.screencapture": {
+      "version": "1.0.0",
+      "depth": 0,
+      "source": "builtin",
+      "dependencies": {
+        "com.unity.modules.imageconversion": "1.0.0"
+      }
+    },
+    "com.unity.modules.subsystems": {
+      "version": "1.0.0",
+      "depth": 1,
+      "source": "builtin",
+      "dependencies": {
+        "com.unity.modules.jsonserialize": "1.0.0"
+      }
+    },
+    "com.unity.modules.terrain": {
+      "version": "1.0.0",
+      "depth": 0,
+      "source": "builtin",
+      "dependencies": {}
+    },
+    "com.unity.modules.terrainphysics": {
+      "version": "1.0.0",
+      "depth": 0,
+      "source": "builtin",
+      "dependencies": {
+        "com.unity.modules.physics": "1.0.0",
+        "com.unity.modules.terrain": "1.0.0"
+      }
+    },
+    "com.unity.modules.tilemap": {
+      "version": "1.0.0",
+      "depth": 0,
+      "source": "builtin",
+      "dependencies": {
+        "com.unity.modules.physics2d": "1.0.0"
+      }
+    },
+    "com.unity.modules.ui": {
+      "version": "1.0.0",
+      "depth": 0,
+      "source": "builtin",
+      "dependencies": {}
+    },
+    "com.unity.modules.uielements": {
+      "version": "1.0.0",
+      "depth": 0,
+      "source": "builtin",
+      "dependencies": {
+        "com.unity.modules.ui": "1.0.0",
+        "com.unity.modules.imgui": "1.0.0",
+        "com.unity.modules.jsonserialize": "1.0.0"
+      }
+    },
+    "com.unity.modules.umbra": {
+      "version": "1.0.0",
+      "depth": 0,
+      "source": "builtin",
+      "dependencies": {}
+    },
+    "com.unity.modules.unityanalytics": {
+      "version": "1.0.0",
+      "depth": 0,
+      "source": "builtin",
+      "dependencies": {
+        "com.unity.modules.unitywebrequest": "1.0.0",
+        "com.unity.modules.jsonserialize": "1.0.0"
+      }
+    },
+    "com.unity.modules.unitywebrequest": {
+      "version": "1.0.0",
+      "depth": 0,
+      "source": "builtin",
+      "dependencies": {}
+    },
+    "com.unity.modules.unitywebrequestassetbundle": {
+      "version": "1.0.0",
+      "depth": 0,
+      "source": "builtin",
+      "dependencies": {
+        "com.unity.modules.assetbundle": "1.0.0",
+        "com.unity.modules.unitywebrequest": "1.0.0"
+      }
+    },
+    "com.unity.modules.unitywebrequestaudio": {
+      "version": "1.0.0",
+      "depth": 0,
+      "source": "builtin",
+      "dependencies": {
+        "com.unity.modules.unitywebrequest": "1.0.0",
+        "com.unity.modules.audio": "1.0.0"
+      }
+    },
+    "com.unity.modules.unitywebrequesttexture": {
+      "version": "1.0.0",
+      "depth": 0,
+      "source": "builtin",
+      "dependencies": {
+        "com.unity.modules.unitywebrequest": "1.0.0",
+        "com.unity.modules.imageconversion": "1.0.0"
+      }
+    },
+    "com.unity.modules.unitywebrequestwww": {
+      "version": "1.0.0",
+      "depth": 0,
+      "source": "builtin",
+      "dependencies": {
+        "com.unity.modules.unitywebrequest": "1.0.0",
+        "com.unity.modules.unitywebrequestassetbundle": "1.0.0",
+        "com.unity.modules.unitywebrequestaudio": "1.0.0",
+        "com.unity.modules.audio": "1.0.0",
+        "com.unity.modules.assetbundle": "1.0.0",
+        "com.unity.modules.imageconversion": "1.0.0"
+      }
+    },
+    "com.unity.modules.vehicles": {
+      "version": "1.0.0",
+      "depth": 0,
+      "source": "builtin",
+      "dependencies": {
+        "com.unity.modules.physics": "1.0.0"
+      }
+    },
+    "com.unity.modules.video": {
+      "version": "1.0.0",
+      "depth": 0,
+      "source": "builtin",
+      "dependencies": {
+        "com.unity.modules.audio": "1.0.0",
+        "com.unity.modules.ui": "1.0.0",
+        "com.unity.modules.unitywebrequest": "1.0.0"
+      }
+    },
+    "com.unity.modules.vr": {
+      "version": "1.0.0",
+      "depth": 0,
+      "source": "builtin",
+      "dependencies": {
+        "com.unity.modules.jsonserialize": "1.0.0",
+        "com.unity.modules.physics": "1.0.0",
+        "com.unity.modules.xr": "1.0.0"
+      }
+    },
+    "com.unity.modules.wind": {
+      "version": "1.0.0",
+      "depth": 0,
+      "source": "builtin",
+      "dependencies": {}
+    },
+    "com.unity.modules.xr": {
+      "version": "1.0.0",
+      "depth": 0,
+      "source": "builtin",
+      "dependencies": {
+        "com.unity.modules.physics": "1.0.0",
+        "com.unity.modules.jsonserialize": "1.0.0",
+        "com.unity.modules.subsystems": "1.0.0"
+      }
+    }
+  }
+}

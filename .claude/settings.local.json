@@ -1,5 +1,11 @@
 {
   "permissions": {
-    "allow": ["*"]
+    "allow": [
+      "Read",
+      "WebSearch",
+      "WebFetch(*)",
+      "Bash(iconv *)",
+      "mcp__gladekit-unity__*"
+    ]
   }
 }

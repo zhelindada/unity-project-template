@@ -1,6 +1,6 @@
 ---
 name: unity-build-ui
-description: 在 Unity 中构建 UI 界面——创建 Canvas、布局元素、设置属性和引用、保存为 Prefab。Use when 需要在 Unity 场景中搭建 UI、创建 HUD/菜单/弹窗、或将 UI 保存为预制体供代码加载。
+description: 在 Unity 中构建 UI 界面和 UI组件 —— 创建 Canvas、新建脚本、布局元素、设置属性和引用、保存为 Prefab。Use when 需要在 Unity 场景中搭建 UI、创建 HUD/菜单/弹窗、或将 UI 保存为预制体供代码加载。
 ---
 
 在 Unity 中构建 UI 界面，6 步完整流程：准备 → 搭建结构 → 配置属性 → 设置引用 → 最终调整 → 导出 Prefab。
@@ -80,7 +80,21 @@ description: 在 Unity 中构建 UI 界面——创建 Canvas、布局元素、�
 - 需要自定义材质时用 `create_material`，然后用 `assign_material_to_renderer` 应用
 - URP 项目 shader 用 `"Universal Render Pipeline/Lit"`
 
-### 阶段 4：设置引用 — 连接组件
+### 阶段 4：创建组件脚本（可选）
+
+当被要求创建面板类型的UI界面时，需要创造一个UI脚本，类名以xxxPanel结尾，继承框架中合适继承的父类，需要完成以下几个基本目标
+
+1. 在Awake绑定引用，添加Listener，（如果使用R3）反应式UI将对应Reactive元素添加Subscription并绑到生命周期, OnDisable时销毁Listener
+2. 在Start中初始化文字，字段，显隐和其他显示属性
+3. 如果有动画，在OnEnable结尾中播放动画
+4. 业务逻辑
+
+当被要求创建内容组件类型的UI组件时，需要创造一个UI脚本，继承框架中合适继承的父类, 实现合适的接口, 且需要完成以下几个基本目标
+
+1. 确定当前组件处在哪个Panel中，Start时获取引用。
+2. 业务逻辑
+
+### 阶段 5：设置引用 — 连接组件
 
 使用 `set_object_reference` 连接组件间的引用：
 
@@ -102,7 +116,7 @@ sourceType      — 引用类型（GameObject / Transform / 具体组件类型�
 - 先调用 `get_component_inspector_properties` 并设置 `onlyReferences: true` 或 `onlyUnassigned: true`
 - 确认字段名后再设置
 
-### 阶段 5：最终调整 — 检查和微调
+### 阶段 6：最终调整 — 检查和微调
 
 1. 用 `get_scene_hierarchy` 检查最终层级结构
 2. 用 `get_gameobject_info` 抽查关键元素的位置和组件

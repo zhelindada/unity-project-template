@@ -7,7 +7,7 @@ namespace Dada.Cores
 {
     public enum GameState
     {
-        Bootstrap,
+        Init,
         Loading,
         Playing,
         Paused,
@@ -16,7 +16,7 @@ namespace Dada.Cores
     public class GameManager : MonoSingleton<GameManager>
     {
         private readonly Dictionary<Type, object> _services = new();
-        private GameState _currentState = GameState.Bootstrap;
+        private GameState _currentState = GameState.Init;
 
         public GameState CurrentState => _currentState;
 

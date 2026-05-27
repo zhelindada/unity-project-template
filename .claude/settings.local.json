@@ -5,7 +5,9 @@
       "WebSearch",
       "WebFetch(*)",
       "Bash(iconv *)",
-      "mcp__gladekit-unity__*"
+      "mcp__gladekit-unity__*",
+      "Bash(mkdir -p native)",
+      "Bash(mv canvas *)"
     ]
   }
 }

@@ -10,7 +10,7 @@ namespace Dada.Cores
         private void Awake()
         {
             var gm = GameManager.Instance;
-            gm.SetState(GameState.Bootstrap);
+            gm.SetState(GameState.Init);
         }
 
         private void Start()

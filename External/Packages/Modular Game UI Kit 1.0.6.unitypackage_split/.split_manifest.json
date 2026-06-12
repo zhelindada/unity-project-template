@@ -1,0 +1,12 @@
+{
+  "original_file": "C:\\Users\\hupo\\tools\\external\\templates\\unity\\unity-project-template\\External\\Packages\\Modular Game UI Kit 1.0.6.unitypackage",
+  "original_name": "Modular Game UI Kit 1.0.6.unitypackage",
+  "original_size": 43507176,
+  "original_checksum": "86c3cb82054c5c9108e56141c56e0676f7617307fa2e8d95dd83f5caa35aa2e8",
+  "chunk_size": 41943040,
+  "chunk_count": 2,
+  "chunks": [
+    "Modular Game UI Kit 1.0.6.unitypackage.part0000",
+    "Modular Game UI Kit 1.0.6.unitypackage.part0001"
+  ]
+}

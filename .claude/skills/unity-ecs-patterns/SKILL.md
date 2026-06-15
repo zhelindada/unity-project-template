@@ -1,9 +1,13 @@
 ---
 name: unity-ecs-patterns
-description: Master Unity ECS (Entity Component System) with DOTS, Jobs, and Burst for high-performance game development. Use when building data-oriented games, optimizing performance, or working with large entity counts.
+description: Unity ECS 模式——掌握 DOTS（Entity Component System + Jobs + Burst 编译器）进行高性能游戏开发。Use when 需要管理数千个实体、需要数据导向（Data-Oriented）架构、或需要利用 Jobs/Burst 进行 CPU 性能优化。
 ---
 
 # Unity ECS Patterns
+
+**Tier:** POWERFUL
+**Category:** Unity / Architecture
+**Tags:** Unity, ECS, DOTS, Jobs, Burst, data-oriented, performance, optimization
 
 Production patterns for Unity's Data-Oriented Technology Stack (DOTS) including Entity Component System, Job System, and Burst Compiler.
 

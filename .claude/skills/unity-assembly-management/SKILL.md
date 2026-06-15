@@ -1,9 +1,13 @@
 ---
 name: unity-assembly-management
-description: Manage project boundaries using Assembly Definitions (.asmdef) for faster compile times and modular architecture. Based on the patterns by Adam Myhre. Enforces responsibility-based organization and handles Runtime/Editor/Tests splits.
+description: 程序集定义管理（Assembly Definitions）——通过 .asmdef 文件管理项目模块边界，加速编译，强制模块架构规范。支持 Runtime/Editor/Tests 分离。Use when 需要拆分大型项目为独立模块、需要加速编译时间、或需要强制模块依赖规范。
 ---
 
 # Unity Assembly Management
+
+**Tier:** POWERFUL
+**Category:** Unity / Architecture
+**Tags:** Unity, assembly definition, asmdef, modular architecture, compilation, project structure
 
 Manage project boundaries using Assembly Definitions (.asmdef) for faster compile times and modular architecture. Based on the patterns by Adam Myhre.
 

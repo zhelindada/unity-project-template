@@ -5,6 +5,10 @@ description: Unity UI 组件参数详解与创建规范——覆盖 Native UGUI 
 
 # Unity UI 组件参数详解与创建规范
 
+**Tier:** POWERFUL
+**Category:** Unity / UI Systems
+**Tags:** Unity, UGUI, Evo UI, Canvas, UI components, TextMeshPro, Styler
+
 ## Overview
 
 根据项目使用的 UI 框架，选择对应的子技能：

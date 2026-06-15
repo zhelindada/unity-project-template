@@ -1,9 +1,13 @@
 ---
 name: unity-ui-data-binding
-description: Implementation of MVVM-style Data Binding for Unity UI Toolkit using the [CreateProperty] attribute and BindableProperty wrappers.
+description: MVVM 风格数据绑定——通过 [CreateProperty] Attribute + BindableProperty 包装器实现 Unity UI Toolkit 的数据驱动 UI 更新，消除 Update 轮询。Use when 需要 UI 自动响应数据变化（血量/分数/金币实时更新）、需要 ViewModel 分离数据格式化与显示、或使用 UI Toolkit 构建界面。
 ---
 
 # Unity UI Toolkit Data Binding
+
+**Tier:** POWERFUL
+**Category:** Unity / UI Systems
+**Tags:** Unity, UI Toolkit, data binding, MVVM, BindableProperty, reactive, ViewModel
 
 Connect your game data (Model) to your interface (View) using modern high-performance data binding. This skill leverages Unity's `unity.properties` system to eliminate "Update" loop logic for UI updates.
 

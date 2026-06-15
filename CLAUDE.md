@@ -10,6 +10,12 @@ This file provides guidance to Claude Code (claude.ai/code) when working with co
 
 详见.claude/conventions/tech-stack.md
 
+## CSS 布局与间距规范
+
+详见.claude/conventions/layout-spacing-system.md
+
+生成 HTML/CSS 页面、组件展示或 UI 原型时必须严格遵循该规范中的 8-point grid spacing scale、Card 规格、Section 结构和 Anti-Squish 规则。
+
 # 游戏策划案
 
 策划案存储在 Asset/$projname/Designs目录下，所有游戏设计包括prototype相关文档和产出都会在这个目录或子目录下

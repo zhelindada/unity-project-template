@@ -1,9 +1,13 @@
 ---
 name: unity-observer-pattern
-description: Reactive Property system for Unity. Decouples data from UI and logic using observable wrappers and UnityEvents.
+description: 观察者模式（Observer / Reactive Properties）——将普通变量转为 "Smart Properties"，通过 Observable 包装器 + UnityEvent 解耦数据与 UI/逻辑。Use when 需要响应式数据更新（血量变化→UI刷新+动画+音效）、需要在 Inspector 中可视化事件连线、或需要隐式转换语法糖。
 ---
 
 # Unity Observer Pattern (Reactive Properties)
+
+**Tier:** POWERFUL
+**Category:** Unity / Design Patterns
+**Tags:** Unity, design pattern, observer, reactive, property, data binding, UnityEvent
 
 A powerful implementation of the Observer pattern that turns standard variables into "Smart Properties." Includes full Inspector support and Edit-mode tooling based on the "Generic Observer" architecture.
 

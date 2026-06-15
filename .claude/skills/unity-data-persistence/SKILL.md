@@ -1,9 +1,13 @@
 ---
 name: unity-data-persistence
-description: Robust Save/Load system using Data Binding, Serializable DTOs, and swappable Data Service backends (File/JSON default). Supports per-entity GUID identity for saving multiple actors (player, inventory, enemies).
+description: 数据持久化系统（Save/Load）——基于 Data Binding + Serializable DTO + 可替换存储后端（File/JSON 默认）。支持 GUID 实体标识，保存多个对象（玩家/背包/敌人）。Use when 需要实现存档/读档、需要保存场景中多个实体的独立状态、或需要可替换的存储后端（本地文件→云端）。
 ---
 
 # Unity Data Persistence
+
+**Tier:** POWERFUL
+**Category:** Unity / Gameplay Systems
+**Tags:** Unity, save, load, persistence, data binding, DTO, serialization, GUID
 
 Implement a professional Save/Load system built around **data binding**: saveable objects hold a live reference to a DTO that is always up-to-date, making serialization near-instant and backend-agnostic.
 

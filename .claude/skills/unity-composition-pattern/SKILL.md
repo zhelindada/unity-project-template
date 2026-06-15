@@ -1,9 +1,13 @@
 ---
 name: unity-composition-pattern
-description: Implements "Composition over Inheritance" using ScriptableObject configs and C# Tuples. Replaces deep class hierarchies with modular, has-a relationships.
+description: 组合模式（Composition over Inheritance）——用 ScriptableObject 配置 + C# Tuple 替代深层继承，通过 Has-A 关系构建模块化对象。Use when 继承层次过深（Vehicle→Car→ElectricCar）、需要组合而非继承来复用行为、或 ScriptableObject 数据驱动的实体配置。
 ---
 
 # Unity Composition Pattern
+
+**Tier:** POWERFUL
+**Category:** Unity / Design Patterns
+**Tags:** Unity, design pattern, composition, ScriptableObject, inheritance, modular
 
 A fundamental design skill to prevent "Inheritance Hell." This pattern replaces 10 specific classes (e.g., RedStone, GoldStone) with one generic class that composes behaviors from ScriptableObject assets.
 

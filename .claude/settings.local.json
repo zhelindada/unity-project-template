@@ -7,7 +7,16 @@
       "Bash(iconv *)",
       "mcp__gladekit-unity__*",
       "Bash(mkdir -p native)",
-      "Bash(mv canvas *)"
+      "Bash(mv canvas *)",
+      "Bash(find *)",
+      "Bash(sort -t'/' -k4)",
+      "Bash(awk '{sum+=$1; count++} END {print \"Total files:\", count, \"| Total lines:\", sum, \"| Avg:\", sum/count}')",
+      "Bash(cp .claude/skills/unity-ui-toolkit-guide/references/uxml-uss-format.md .claude/skills/unity-uitk-builder/references/)",
+      "Bash(cp .claude/skills/unity-ui-toolkit-guide/references/mvvm-pattern.md .claude/skills/unity-uitk-logic/references/)",
+      "Bash(cp .claude/skills/unity-ui-toolkit-guide/references/animation-approach.md .claude/skills/unity-uitk-logic/references/)",
+      "Bash(mkdir -p .claude/agents)",
+      "Bash(mv .claude/skills/unity-uitk-builder .claude/agents/)",
+      "Bash(mv .claude/skills/unity-uitk-logic .claude/agents/)"
     ]
   }
 }

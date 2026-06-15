@@ -1,10 +1,14 @@
 ---
 name: unity-so-prefab-manager
-description: "Manages the structured relationship between ScriptableObjects (Data) and Prefabs (Logic/Visuals) in Unity 6. Follows the 'SO-to-Mono' Bridge pattern to ensure instance independence (e.g., individual health for identical robots) while maintaining a clean, data-driven architecture. Use when: (1) Creating new unit/item types, (2) Wiring SO data to Prefab MonoBehaviours, (3) Resolving data-sharing bugs where changing one SO affects all instances."
+description: SO-Prefab 管理器——管理 ScriptableObject（Data）与 Prefab（Logic/Visuals）的结构化关系。使用 SO-to-Mono Bridge 模式确保实例独立性（相同 Prefab 各自独立 HP）。Use when 创建新单位/物品类型、将 SO 数据绑定到 Prefab MonoBehaviour、或排查修改 SO 影响所有实例的数据共享 Bug。
 
 ---
 
 # Unity SO-Prefab Manager
+
+**Tier:** POWERFUL
+**Category:** Unity / Architecture
+**Tags:** Unity, ScriptableObject, prefab, data-driven, bridge pattern, SO-to-Mono, architecture
 
 This skill enforces a strictly modular "Bridge" pattern between Data and Logic.
 

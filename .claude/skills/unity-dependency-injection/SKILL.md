@@ -1,9 +1,13 @@
 ---
 name: unity-dependency-injection
-description: Implements Dependency Inversion and Injection patterns. Decouples high-level logic from concrete implementations using attributes and reflection.
+description: 依赖注入（Dependency Injection）——通过 Attribute + 反射实现 SOLID 中的依赖反转原则（DIP），解耦高层逻辑与具体实现。Use when 需要解耦模块间依赖、需要可替换的实现（武器系统更换武器类型）、或需要在 Awake 阶段自动注入依赖。
 ---
 
 # Unity Dependency Injection (DI)
+
+**Tier:** POWERFUL
+**Category:** Unity / Design Patterns
+**Tags:** Unity, design pattern, dependency injection, DI, SOLID, decoupling, attributes
 
 A lightweight system to satisfy the "D" in SOLID. Allows classes to request dependencies via `[Inject]` without knowing who provides them.
 

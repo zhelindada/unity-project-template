@@ -5,6 +5,10 @@ description: 在 Unity 中构建 UI 界面和 UI组件 —— 创建 Canvas、�
 
 在 Unity 中构建 UI 界面，6 步完整流程：准备 → 搭建结构 → 配置属性 → 设置引用 → 最终调整 → 导出 Prefab。
 
+**Tier:** POWERFUL
+**Category:** Unity / UI Systems
+**Tags:** Unity, UGUI, Canvas, UI construction, prefab, layout, MCP
+
 ## 工作流程
 
 按顺序执行以下阶段，不要跳过。

@@ -5,6 +5,10 @@ description: 在 Unity 中配置 UI 元素的 RectTransform 和布局组件 —�
 
 为 Unity UI 元素配置正确的位置、尺寸和自适应行为。4 步流程：分析需求 → 选择模式 → 设置属性 → 添加布局组件。
 
+**Tier:** POWERFUL
+**Category:** Unity / UI Systems
+**Tags:** Unity, UGUI, RectTransform, anchor, pivot, layout, responsive, adaptive
+
 ## 工作流程
 
 按顺序执行以下阶段。

@@ -5,6 +5,10 @@ description: 检查 Unity 场景中 UI 组件的规范性和 4K 适配性 ——
 
 检查 Unity 场景 UI 组件是否符合 4K 分辨率规范。3 步流程：收集信息 → 逐项检查 → 输出报告。
 
+**Tier:** POWERFUL
+**Category:** Unity / UI Systems
+**Tags:** Unity, UGUI, 4K, UI audit, Canvas, resolution, quality assurance
+
 ## 工作流程
 
 ### 阶段 0：准备

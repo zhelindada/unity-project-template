@@ -1,9 +1,13 @@
 ---
 name: unity-singleton-pattern
-description: Implementation of global manager access with strict lifecycle control. Supports Standard, Persistent, and Regulator variations.
+description: 单例模式（Singleton）——全局管理器访问与严格生命周期控制。支持 Standard（单场景）/ Persistent（跨场景）/ Regulator（热替换）三种变体。Use when 需要全局系统（GameManager/UIManager/InputManager）、需要跨场景持久化对象、或需要热替换全局系统。
 ---
 
 # Unity Singleton Pattern
+
+**Tier:** POWERFUL
+**Category:** Unity / Design Patterns
+**Tags:** Unity, design pattern, singleton, global manager, lifecycle, persistent
 
 A robust suite of Singleton variations for global systems. Adheres to the Ohm-Yura project rule: "Use Singletons ONLY for global systems (GameManager, UIManager, InputManager)."
 

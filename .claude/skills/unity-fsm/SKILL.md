@@ -1,9 +1,13 @@
 ---
 name: unity-fsm
-description: Specialized skill for implementing a robust, extensible Finite State Machine in Unity using the State and Strategy patterns. Based on the pattern by Adam Myhre (3D Platformer). Use when creating complex AI, player controllers, or any system requiring structured state management.
+description: 有限状态机（FSM）——基于 State + Strategy 模式的可扩展状态机。包含计时器系统、检测策略和 AI 模板。Use when 需要复杂 AI（巡逻/追击/逃跑）、玩家控制器状态管理（站立/跳跃/冲刺）、或需要结构化状态转换的系统。
 ---
 
 # Unity Finite State Machine (FSM)
+
+**Tier:** POWERFUL
+**Category:** Unity / Design Patterns
+**Tags:** Unity, design pattern, FSM, state machine, AI, player controller, strategy
 
 This skill provides a modular, object-oriented State Machine architecture for Unity, specifically refactored to match the implementation in Adam Myhre's 3D Platformer.
 

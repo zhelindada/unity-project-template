@@ -1,0 +1,280 @@
+{
+  "_说明": "Unity UI 配置 —— 按 UI 概念/模式组织，而非按组件类型。大模型根据要创建的 UI 类型查找对应章节，尺寸优先用父级百分比，其次用 px 范围。",
+
+  "canvas": {
+    "renderMode": "ScreenSpaceOverlay",
+    "scaler": {
+      "uiScaleMode": "ScaleWithScreenSize",
+      "referenceResolution": "1920,1080",
+      "screenMatchMode": "MatchWidthOrHeight",
+      "matchWidthOrHeight": 0.5,
+      "_match_rule": "竖屏手游→0，横屏→1，通用桌面/平板→0.5。0=按宽度缩放，1=按高度缩放"
+    },
+    "referencePixelsPerUnit": 100
+  },
+
+  "fonts": {
+    "defaultFont": "",
+    "_font_note": "中文项目必须指定中文字体路径，如 'Assets/Art/Fonts/NotoSansSC-VariableFont_wght SDF.asset'",
+    "sizeByRole": {
+      "title":   { "min": 28, "default": 36, "max": 48 },
+      "heading": { "min": 22, "default": 28, "max": 34 },
+      "body":    { "min": 18, "default": 24, "max": 28 },
+      "caption": { "min": 14, "default": 18, "max": 22 },
+      "button":  { "min": 18, "default": 22, "max": 28 },
+      "input":   { "min": 16, "default": 20, "max": 24 }
+    },
+    "_size_rule": "标题 > 正文 > 辅助文字，层级差至少 4px"
+  },
+
+  "colors": {
+    "_note": "暗色主题色板，r,g,b,a 值域 0~1。可微调但需满足 constraints.contrast",
+    "panel":        "0.1,0.1,0.12,0.95",
+    "panelBorder":  "0.3,0.3,0.35,1",
+    "overlay":      "0,0,0,0.5",
+    "button":       "0.25,0.25,0.3,1",
+    "buttonHover":  "0.35,0.35,0.42,1",
+    "buttonPress":  "0.15,0.15,0.18,1",
+    "buttonDisabled":"0.3,0.3,0.3,0.5",
+    "textPrimary":  "0.9,0.9,0.9,1",
+    "textSecondary":"0.6,0.6,0.65,1",
+    "textDisabled": "0.4,0.4,0.4,0.6",
+    "inputBg":      "0.15,0.15,0.18,1",
+    "inputBorder":  "0.3,0.3,0.35,1",
+    "sliderTrack":  "0.2,0.2,0.22,1",
+    "sliderFill":   "0.3,0.6,0.9,1",
+    "toggleCheck":  "0.3,0.6,0.9,1",
+    "scrollbarBg":  "0.15,0.15,0.18,0.8",
+    "scrollbarHandle":"0.4,0.4,0.45,1",
+    "danger":       "0.85,0.2,0.2,1",
+    "success":      "0.2,0.75,0.35,1",
+    "warning":      "0.9,0.7,0.15,1"
+  },
+
+  "patterns": {
+
+    "_intro": "以下每个 UI 模式定义了尺寸规则（优先用父级百分比）、布局方式、典型 Anchor。大模型选择匹配的模式即可。",
+
+    "modal": {
+      "_desc": "居中弹窗/对话框。从屏幕中心弹出，覆盖在现有内容之上。",
+      "_typical": "设置面板、确认对话框、详情弹窗、登录/注册面板",
+      "size": {
+        "width":  { "min": "30%", "default": "50%", "max": "70%", "_relativeTo": "父级宽度" },
+        "height": { "min": "30%", "default": "50%", "max": "80%", "_relativeTo": "父级高度" },
+        "minWidth":  { "px": 300, "_note": "内容复杂时取 400-500" },
+        "minHeight": { "px": 200, "_note": "内容很少时（如确认框）取 150-200" }
+      },
+      "anchor": { "min": "(0.5,0.5)", "max": "(0.5,0.5)", "pivot": "(0.5,0.5)", "pos": "(0,0)" },
+      "backdrop": {
+        "_desc": "弹窗背后的半透明遮罩，阻止穿透点击",
+        "color": "colors.overlay",
+        "anchor": { "min": "(0,0)", "max": "(1,1)" },
+        "raycast": true
+      },
+      "layout": "VerticalLayoutGroup（标题 + 内容 + 按钮行），内部 padding 16-24",
+      "buttonRow": {
+        "_desc": "弹窗底部按钮行",
+        "layout": "HorizontalLayoutGroup，右对齐，间距 8",
+        "order": "次要操作（取消）在左，主要操作（确认）在右"
+      }
+    },
+
+    "sidebar": {
+      "_desc": "左侧或右侧固定面板，高度撑满父级。用于导航、属性面板、筛选器等。",
+      "_typical": "导航菜单、属性面板、Inspector、筛选器侧栏、聊天列表",
+      "size": {
+        "width":  { "min": "12%", "default": "20%", "max": "30%", "_relativeTo": "父级宽度" },
+        "minWidth":  { "px": 180, "_note": "确保文字不被截断" },
+        "maxWidth":  { "px": 400, "_note": "超过此值开始侵占主内容区" },
+        "height": "撑满父级"
+      },
+      "anchor": {
+        "left":  { "min": "(0,0)", "max": "(0,1)", "pivot": "(0,0.5)" },
+        "right": { "min": "(1,0)", "max": "(1,1)", "pivot": "(1,0.5)" }
+      },
+      "layout": "VerticalLayoutGroup（从上到下排列导航项/属性行），ChildForceExpandWidth=true",
+      "toggleMode": {
+        "_desc": "可开关侧边栏 —— 关闭时内容区自动扩展填充",
+        "behavior": "通过调整侧边栏 Width 或 SetActive 实现开关"
+      }
+    },
+
+    "topBar": {
+      "_desc": "顶部固定横条，撑满父级宽度，固定高度。",
+      "_typical": "标题栏、主菜单栏、工具栏",
+      "size": {
+        "height": { "min": 36, "default": 52, "max": 72, "unit": "px" },
+        "width": "撑满父级"
+      },
+      "anchor": { "min": "(0,1)", "max": "(1,1)", "pivot": "(0.5,1)", "pos": "(0,0)" },
+      "layout": "HorizontalLayoutGroup（左侧图标/返回按钮 + 中间标题 + 右侧操作按钮）"
+    },
+
+    "bottomBar": {
+      "_desc": "底部固定横条，撑满父级宽度，固定高度。",
+      "_typical": "状态栏、播放控制条、操作栏",
+      "size": {
+        "height": { "min": 32, "default": 48, "max": 64, "unit": "px" },
+        "width": "撑满父级"
+      },
+      "anchor": { "min": "(0,0)", "max": "(1,0)", "pivot": "(0.5,0)", "pos": "(0,0)" },
+      "layout": "HorizontalLayoutGroup"
+    },
+
+    "tabBar": {
+      "_desc": "标签页切换栏，通常位于内容区顶部。",
+      "_typical": "编辑器标签切换、设置分类切换",
+      "size": {
+        "height": { "min": 32, "default": 40, "max": 52, "unit": "px" },
+        "width": "撑满父级"
+      },
+      "layout": "HorizontalLayoutGroup，ChildForceExpandWidth=true（均分宽度）或 false（各自固定宽度）",
+      "activeTab": "高亮颜色或下划线区隔当前选中标签"
+    },
+
+    "toolbar": {
+      "_desc": "水平排列的工具按钮组，固定高度。",
+      "_typical": "编辑器工具栏、格式化工具栏",
+      "size": {
+        "height": { "min": 32, "default": 40, "max": 52, "unit": "px" },
+        "buttonSize": { "min": 28, "default": 36, "max": 44, "unit": "px" }
+      },
+      "layout": "HorizontalLayoutGroup，Spacing=4，ChildForceExpandWidth=false，ChildAlignment=MiddleLeft",
+      "buttonStyle": "小尺寸方形按钮，通常只有图标或短文字"
+    },
+
+    "contentArea": {
+      "_desc": "主内容区。填充侧边栏/顶栏/底栏之外的所有剩余空间。",
+      "_typical": "编辑器工作区、画布区域、文章正文区",
+      "size": {
+        "_rule": "全屏拉伸模式 Anchor(0,0)→(1,1)，用负 SizeDelta 为顶栏/底栏/侧边栏留空间"
+      },
+      "anchor": { "min": "(0,0)", "max": "(1,1)", "pivot": "(0.5,0.5)" }
+    },
+
+    "splitPane": {
+      "_desc": "水平或垂直分割的两个区域，中间可拖拽调整比例。",
+      "_typical": "代码编辑器（文件树 + 编辑器）、双栏对比",
+      "ratio": {
+        "default": "30:70",
+        "range": "15:85 ~ 40:60",
+        "_note": "左侧面板 ≤ 40%，主内容 ≥ 60%"
+      },
+      "layout": "左侧 + 分隔线（4-6px）+ 右侧。分离线用 Panel，RaycastTarget=true"
+    },
+
+    "scrollableList": {
+      "_desc": "可滚动的垂直列表，内容超出时自动出现滚动条。",
+      "_typical": "歌曲列表、关卡列表、好友列表、设置项列表",
+      "container": {
+        "_desc": "ScrollView 容器",
+        "size": "填充父级，anchor(0,0)→(1,1)"
+      },
+      "row": {
+        "height": { "min": 32, "default": 44, "max": 64, "unit": "px" },
+        "layout": "HorizontalLayoutGroup 排列该行的列",
+        "padding": { "min": 4, "default": 8, "max": 12, "unit": "px" }
+      },
+      "content": {
+        "_desc": "ScrollView 的 Content 对象",
+        "anchor": "(0,1)→(1,1)，pivot=(0,1)",
+        "components": "VerticalLayoutGroup + ContentSizeFitter(VerticalFit=PreferredSize)"
+      },
+      "scrollbar": {
+        "width": { "min": 8, "default": 12, "max": 16, "unit": "px" },
+        "position": "右侧"
+      }
+    },
+
+    "form": {
+      "_desc": "标签+输入控件的垂直排列表单。",
+      "_typical": "设置页、用户资料编辑、新建/编辑表单",
+      "layout": "VerticalLayoutGroup，Spacing=8-12，ChildForceExpandWidth=true",
+      "row": {
+        "height": { "min": 32, "default": 40, "max": 52, "unit": "px" },
+        "pattern": "标签（固定宽度 80-150px）+ 输入控件（弹性填充剩余宽度）",
+        "layout": "每行 HorizontalLayoutGroup，Label + InputField/Slider/Dropdown/Toggle"
+      },
+      "label": {
+        "width": { "min": 60, "default": 120, "max": 180, "unit": "px" },
+        "alignment": "MiddleLeft",
+        "color": "colors.textSecondary"
+      },
+      "input": {
+        "height": { "min": 28, "default": 36, "max": 44, "unit": "px" }
+      }
+    },
+
+    "hud": {
+      "_desc": "游戏内常驻覆盖信息，如血条、分数、计时器等。通常固定在屏幕四角。",
+      "_typical": "血条、分数、计时器、小地图、连击计数",
+      "anchor": {
+        "topLeft":     { "min": "(0,1)", "max": "(0,1)", "pivot": "(0,1)" },
+        "topRight":    { "min": "(1,1)", "max": "(1,1)", "pivot": "(1,1)" },
+        "bottomLeft":  { "min": "(0,0)", "max": "(0,0)", "pivot": "(0,0)" },
+        "bottomRight": { "min": "(1,0)", "max": "(1,0)", "pivot": "(1,0)" },
+        "topCenter":   { "min": "(0.5,1)", "max": "(0.5,1)", "pivot": "(0.5,1)" }
+      },
+      "offset": { "min": 8, "default": 16, "max": 32, "unit": "px", "_note": "元素距屏幕边缘的距离" },
+      "size": "手动设置，无 LayoutGroup，各自独立定位"
+    },
+
+    "cardGrid": {
+      "_desc": "等大卡片的网格排列，适合展示多个同类型条目。",
+      "_typical": "关卡选择、角色选择、歌曲封面网格",
+      "card": {
+        "width":  { "min": 120, "default": 180, "max": 280, "unit": "px" },
+        "height": { "min": 160, "default": 240, "max": 360, "unit": "px" },
+        "gap":    { "min": 8,  "default": 16,  "max": 24,  "unit": "px" }
+      },
+      "layout": "GridLayoutGroup 或计算列数后手动排列。每行列数 = floor(可用宽度 / (cardWidth + gap))"
+    }
+  },
+
+  "interaction": {
+    "transition": "ColorTint",
+    "navigation": "None",
+    "stateColors": {
+      "normal":    "1,1,1,1",
+      "hover":     "0.9,0.9,0.9,1",
+      "press":     "0.7,0.7,0.7,1",
+      "selected":  "0.85,0.9,1,1",
+      "disabled":  "0.5,0.5,0.5,0.5"
+    },
+    "fadeDuration": { "min": 0.05, "default": 0.1, "max": 0.2, "unit": "s" }
+  },
+
+  "constraints": {
+    "_rule": "硬性约束，不可突破。范围参数可自由选择，以下为合法性底线。",
+    "contrast": {
+      "textOnBg":       3.0,
+      "largeTextOnBg":  2.5,
+      "_note": "WCAG AA 标准。对比度 = (L1+0.05)/(L2+0.05)，L=相对亮度"
+    },
+    "touchTarget": {
+      "minSize": 24,
+      "unit": "px",
+      "_note": "可点击元素最小尺寸（含 padding）"
+    },
+    "textReadability": {
+      "minFontSize": 16,
+      "unit": "px"
+    },
+    "alpha": {
+      "elementVisible": 0.3,
+      "textReadable":   0.8,
+      "_note": "元素 alpha < 0.3 视为不可见；文字 alpha < 0.8 可读性警告"
+    },
+    "proportion": {
+      "sidebarMaxWidth":   "30%",
+      "modalMaxSize":      "80%",
+      "overlayMinAlpha":   0.3,
+      "_note": "侧边栏宽度不超过父级30%；弹窗不超过父级80%；遮罩透明度不低于0.3以有效阻断后方点击"
+    }
+  },
+
+  "batch": {
+    "suggestedThreshold": 3,
+    "_note": "独立操作数 ≥ 此值时建议用 batch_execute 合并提交"
+  }
+}

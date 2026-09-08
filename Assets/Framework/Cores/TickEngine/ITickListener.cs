@@ -1,4 +1,4 @@
-namespace Dada.Cores.TickEngine
+namespace Dada.Cores
 {
     public interface ITickListener
     {

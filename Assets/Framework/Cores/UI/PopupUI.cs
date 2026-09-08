@@ -3,7 +3,7 @@ using TMPro;
 using UnityEngine;
 using UnityEngine.UI;
 
-namespace Dada.Cores.UI
+namespace Dada.Cores
 {
     /// <summary>
     /// 模态弹窗。包含标题、正文、确认/取消按钮。

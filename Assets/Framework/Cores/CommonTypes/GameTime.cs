@@ -1,4 +1,4 @@
-namespace Dada.Cores.CommonTypes;
+namespace Dada.Cores;
 
 public struct GameTime
 {

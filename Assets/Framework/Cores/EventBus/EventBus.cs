@@ -1,7 +1,7 @@
 using System;
 using System.Collections.Generic;
 
-namespace Dada.Cores.EventBus
+namespace Dada.Cores
 {
     public static class EventBus
     {

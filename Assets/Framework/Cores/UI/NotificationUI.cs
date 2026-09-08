@@ -3,7 +3,7 @@ using System.Collections;
 using TMPro;
 using UnityEngine;
 
-namespace Dada.Cores.UI
+namespace Dada.Cores
 {
     /// <summary>
     /// Toast通知消息。从屏幕上方/下方滑入，短暂停留后自动消失。

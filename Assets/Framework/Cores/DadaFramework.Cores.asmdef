@@ -1,0 +1,10 @@
+{
+    "name": "DadaFramework.Cores",
+    "references": [
+        "DadaFramework.Foundations",
+        "Unity.TextMeshPro",
+        "VContainer",
+        "Unity.InputSystem",
+        "UniTask"
+    ]
+}

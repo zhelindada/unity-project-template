@@ -1,5 +1,6 @@
 using System;
 using System.Collections.Generic;
+using Cysharp.Threading.Tasks;
 using Dada.Foundations;
 using UnityEngine;
 
@@ -43,14 +44,12 @@ namespace Dada.Cores
                 : default;
         }
 
-        public void StartGame(string firstScene)
+        public async UniTaskVoid StartGame(string firstScene)
         {
             SetState(GameState.Loading);
-            StartCoroutine(SceneLoader.LoadSceneAsync(firstScene, _ =>
-            {
-                if (CurrentState == GameState.Loading)
-                    SetState(GameState.Playing);
-            }));
+            await SceneLoader.LoadSceneAsync(firstScene);
+            if (CurrentState == GameState.Loading)
+                SetState(GameState.Playing);
         }
     }
 }

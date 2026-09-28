@@ -6,7 +6,7 @@ namespace Dada.Cores
 {
     public class ConfigManager : MonoSingleton<ConfigManager>
     {
-        [SerializeField] private List<Cores.Config> configs = new();
+        [SerializeField] private List<Config> configs = new();
         
         private Dictionary<string, Config> _configDict;
 
@@ -32,4 +32,3 @@ namespace Dada.Cores
         }
     }
 }
-

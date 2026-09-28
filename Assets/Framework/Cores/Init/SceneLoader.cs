@@ -1,36 +1,19 @@
-using System;
-using System.Collections;
-using UnityEngine;
+using Cysharp.Threading.Tasks;
 using UnityEngine.SceneManagement;
 
-namespace Dada.Cores
+namespace Dada.Cores;
+
+public static class SceneLoader
 {
-    public static class SceneLoader
+    public static async UniTask LoadSceneAsync(
+        string sceneName,
+        LoadSceneMode mode = LoadSceneMode.Single)
     {
-        public static IEnumerator LoadSceneAsync(
-            string sceneName,
-            Action<float> onProgress = null,
-            LoadSceneMode mode = LoadSceneMode.Single)
-        {
-            var op = SceneManager.LoadSceneAsync(sceneName, mode);
-            if (op == null) yield break;
+        await SceneManager.LoadSceneAsync(sceneName, mode).ToUniTask();
+    }
 
-            op.allowSceneActivation = true;
-
-            while (!op.isDone)
-            {
-                onProgress?.Invoke(op.progress);
-                yield return null;
-            }
-        }
-
-        public static IEnumerator UnloadSceneAsync(string sceneName)
-        {
-            var op = SceneManager.UnloadSceneAsync(sceneName);
-            if (op == null) yield break;
-
-            while (!op.isDone)
-                yield return null;
-        }
+    public static async UniTask UnloadSceneAsync(string sceneName)
+    {
+        await SceneManager.UnloadSceneAsync(sceneName).ToUniTask();
     }
 }

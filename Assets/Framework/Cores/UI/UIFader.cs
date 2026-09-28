@@ -2,7 +2,7 @@ using System;
 using System.Collections;
 using UnityEngine;
 
-namespace Dada.Cores.UI
+namespace Dada.Cores
 {
     /// <summary>
     /// CanvasGroup淡入淡出组件。挂载到任意GameObject上即可使用。

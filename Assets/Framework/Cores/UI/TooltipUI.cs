@@ -2,7 +2,7 @@ using System.Collections;
 using TMPro;
 using UnityEngine;
 
-namespace Dada.Cores.UI
+namespace Dada.Cores
 {
     /// <summary>
     /// 工具提示。跟随鼠标或锚定在指定位置，显示简短信息后自动隐藏。

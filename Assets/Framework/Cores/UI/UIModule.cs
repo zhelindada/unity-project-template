@@ -2,7 +2,7 @@ using System;
 using System.Collections;
 using UnityEngine;
 
-namespace Dada.Cores.UI
+namespace Dada.Cores
 {
     /// <summary>
     /// 所有UI模块的抽象基类。提供统一的生命周期、动画支持和取消处理。

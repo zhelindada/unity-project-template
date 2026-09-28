@@ -1,0 +1,18 @@
+{
+  "original_file": "C:\\Users\\hupo\\external\\templates\\unity\\unity-project-template\\External\\Packages\\Feel 6.1.unitypackage",
+  "original_name": "Feel 6.1.unitypackage",
+  "original_size": 316559662,
+  "original_checksum": "3def7df3e55db1e82c5220da88973035f3ae2a9844cf089677b23c1f860db335",
+  "chunk_size": 41943040,
+  "chunk_count": 8,
+  "chunks": [
+    "Feel 6.1.unitypackage.part0000",
+    "Feel 6.1.unitypackage.part0001",
+    "Feel 6.1.unitypackage.part0002",
+    "Feel 6.1.unitypackage.part0003",
+    "Feel 6.1.unitypackage.part0004",
+    "Feel 6.1.unitypackage.part0005",
+    "Feel 6.1.unitypackage.part0006",
+    "Feel 6.1.unitypackage.part0007"
+  ]
+}

@@ -1,7 +1,7 @@
 using System.Collections.Generic;
 using UnityEngine;
 
-namespace Dada.Cores.UI
+namespace Dada.Cores
 {
     /// <summary>
     /// UI模块对象池。缓存已关闭的模块实例，避免频繁Instantiate/Destroy。

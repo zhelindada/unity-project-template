@@ -1,4 +1,4 @@
-namespace Dada.Cores.UI
+namespace Dada.Cores
 {
     /// <summary>
     /// UI层级，按渲染顺序从低到高排列。

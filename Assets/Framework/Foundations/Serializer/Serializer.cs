@@ -4,7 +4,7 @@ using System.IO;
 using System.Reflection;
 using System.Xml;
 
-namespace Dada.Foundations.Serializer
+namespace Dada.Foundations
 {
     /// <summary>
     /// 标记需要参与序列化的字段或属性。

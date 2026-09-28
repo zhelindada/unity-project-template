@@ -1,6 +1,6 @@
 using System;
 
-namespace Dada.Cores.UI
+namespace Dada.Cores
 {
     /// <summary>
     /// 支持显示/隐藏动画的UI模块。由UIModule在生命周期中自动调用。

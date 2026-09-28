@@ -3,7 +3,7 @@ using System.Collections.Generic;
 using UnityEngine;
 using Dada.Foundations;
 
-namespace Dada.Cores.TickEngine
+namespace Dada.Cores
 {
     public enum TickSpeed
     {

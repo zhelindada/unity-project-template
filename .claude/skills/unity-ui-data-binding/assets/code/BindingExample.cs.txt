@@ -1,5 +1,7 @@
 using UnityEngine;
+using UnityEngine.InputSystem;
 using UnityEngine.UIElements;
+using Unity.Properties;
 using Standard.UI.Binding;
 
 namespace Standard.Examples {
@@ -14,15 +16,15 @@ namespace Standard.Examples {
         private PlayerStats model;
 
         // One-way string binding (for a Label)
-        public BindableProperty<string> CoinDisplay { get; }
+        [CreateProperty] public BindableProperty<string> CoinDisplay { get; }
         
         // One-way float binding (for a Progress Bar)
-        public BindableProperty<float> HealthDisplay { get; }
+        [CreateProperty] public BindableProperty<float> HealthDisplay { get; }
 
         public PlayerViewModel(PlayerStats stats) {
             model = stats;
             CoinDisplay = BindableProperty<string>.Bind(() => $"COINS: {model.Coins}");
-            HealthDisplay = BindableProperty<float>.Bind(() => model.HealthPercent);
+            HealthDisplay = BindableProperty<float>.Bind(() => model.HealthPercent * 100f);
         }
     }
 
@@ -34,6 +36,8 @@ namespace Standard.Examples {
 
         private void OnEnable() {
             viewModel = new PlayerViewModel(stats);
+            if (uiDoc == null) uiDoc = GetComponent<UIDocument>();
+            if (uiDoc == null) return;
             var root = uiDoc.rootVisualElement;
 
             // Set the DATA SOURCE for the root (or specific sub-sections)
@@ -43,16 +47,24 @@ namespace Standard.Examples {
             var coinLabel = root.Q<Label>("coin-label");
             var healthBar = root.Q<ProgressBar>("health-bar");
 
+            if (coinLabel == null || healthBar == null) return;
+
             // Path points to the Property Name + ".Value"
-            coinLabel.SetBinding("text", "CoinDisplay.Value");
-            healthBar.SetBinding("value", "HealthDisplay.Value");
+            coinLabel.SetBinding("text", new DataBinding {
+                dataSourcePath = new PropertyPath("CoinDisplay.Value"),
+                bindingMode = BindingMode.ToTarget
+            });
+            healthBar.SetBinding("value", new DataBinding {
+                dataSourcePath = new PropertyPath("HealthDisplay.Value"),
+                bindingMode = BindingMode.ToTarget
+            });
             
             Debug.Log("[Binding] Status: Data Source set to View Model | Data: Success");
         }
 
         private void Update() {
             // Simulated update: The UI updates automatically via binding!
-            if (Input.GetKeyDown(KeyCode.Space)) {
+            if (Keyboard.current?.spaceKey.wasPressedThisFrame == true) {
                 stats.Coins += 10;
             }
         }

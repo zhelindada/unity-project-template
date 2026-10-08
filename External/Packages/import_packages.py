@@ -7,11 +7,12 @@ Writing `asset` to the path stored in `pathname` and `asset.meta` to
 does, including GUID preservation.
 
 Usage:
-  python upkg_import.py --project "D:\\path\\to\\project" [--apply] pkg1.unitypackage ...
+  python import_packages.py --project "D:\\path\\to\\project" [--apply] pkg1.unitypackage ...
 Without --apply it only reports (dry run).
 """
 import argparse
 import os
+import re
 import sys
 import tarfile
 
@@ -122,10 +123,52 @@ def apply_writes(stats):
     return written
 
 
+def validate_imports(all_stats, project, overwrite=False):
+    """Validate the complete import before writing any files."""
+    errors = []
+    planned = {}
+    owners = {}
+    for stats in all_stats:
+        if stats["conflicts"] and not overwrite:
+            errors.append("%s would overwrite existing assets; use --overwrite for an intentional upgrade."
+                          % stats["package"])
+        for kind, data, dst in stats["writes"]:
+            if kind != "file":
+                continue
+            if dst in planned and planned[dst] != data:
+                errors.append("Packages %s and %s contain different versions of %s; select one package."
+                              % (owners[dst], stats["package"], os.path.relpath(dst, project)))
+            planned[dst] = data
+            owners[dst] = stats["package"]
+
+    def effective_text(relative):
+        path = os.path.join(project, *relative.split("/"))
+        if path in planned:
+            return planned[path].decode("utf-8-sig", "replace")
+        if os.path.isfile(path):
+            with open(path, encoding="utf-8-sig", errors="replace") as fh:
+                return fh.read()
+        return ""
+
+    inspector = effective_text("Assets/Plugins/Sirenix/Odin Inspector/Version.txt").strip()
+    validator_source = effective_text("Assets/Plugins/Sirenix/Odin Validator/EnsureCorrectOdinVersion.cs")
+    validator = re.search(r'validatorVersion\s*=\s*"(\d+\.\d+\.\d+\.\d+)"', validator_source)
+    if validator:
+        version = validator.group(1)
+        if not inspector:
+            errors.append("Odin Validator %s requires a matching Odin Inspector package." % version)
+        elif inspector.split(".")[:3] != version.split(".")[:3]:
+            errors.append("Odin version mismatch: Inspector %s / Validator %s. Install matching Major.Minor.Build versions."
+                          % (inspector, version))
+    return errors
+
+
 def main():
     ap = argparse.ArgumentParser()
     ap.add_argument("--project", required=True)
     ap.add_argument("--apply", action="store_true")
+    ap.add_argument("--overwrite", action="store_true",
+                    help="Allow intentional updates of installed assets; Odin mismatches and conflicting input packages are still rejected.")
     ap.add_argument("packages", nargs="+")
     args = ap.parse_args()
     project = os.path.abspath(args.project)
@@ -140,8 +183,8 @@ def main():
     all_stats = []
     for pkg in args.packages:
         if not os.path.isfile(pkg):
-            print("!! missing package: %s" % pkg)
-            continue
+            print("ERROR: missing package: %s" % pkg)
+            return 1
         st = scan(pkg, project)
         all_stats.append(st)
         grand["assets"] += st["assets"]
@@ -162,10 +205,18 @@ def main():
             print("    [conflict] %s" % p)
         for p in st["missing_meta_list"][:5]:
             print("    [auto-meta] %s" % p)
-        if args.apply:
+
+    errors = validate_imports(all_stats, project, args.overwrite)
+    if errors:
+        for error in errors:
+            print("ERROR: " + error)
+        print("Import rejected before writing files.")
+        return 1
+    if args.apply:
+        for st in all_stats:
             st["written"] = apply_writes(st)
             grand["written"] += st["written"]
-            print("  -> written: %d files" % st["written"])
+            print("%s -> written: %d files" % (st["package"], st["written"]))
 
     print("\n" + "=" * 78)
     print("TOTAL assets=%d folders=%d outside_Assets=%d conflicts=%d missing_meta=%d%s"

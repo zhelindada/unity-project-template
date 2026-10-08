@@ -48,7 +48,7 @@
 | 脚本 | C# MonoBehaviour | C++/Blueprint | GDScript/C# | 框架语言 |
 | 物理 | Rigidbody + Collider | PhysicsBody + Collision | RigidBody + CollisionShape | 框架 API |
 | UI | Canvas + TMP | UMG Widget | Control nodes | 框架 API |
-| 输入 | InputSystem / Input | Enhanced Input | Input Map | 框架 API |
+| 输入 | Input System / Input Actions | Enhanced Input | Input Map | 框架 API |
 | 相机 | Camera component | CameraActor + SpringArm | Camera3D/2D | 手动矩阵 |
 
 ## 适配原则
@@ -57,6 +57,6 @@
 2. **无工具时输出代码**：为 Unreal/Godot 输出完整文件内容 + 放置说明
 3. **保持原型脚本跨框架逻辑一致**：PlayerController 的核心逻辑（移动速度、跳跃力、碰撞检测）用注释标注物理参数，方便迁移
 4. **标注框架特定细节**：
-   - Unity: `// Unity: 使用 InputSystem 或 Input.GetAxis`
+   - Unity: `// Unity 6.6: 使用 Input System / Input Actions`
    - Unreal: `// UE: 使用 Enhanced Input Action`
    - Godot: `# Godot: 使用 InputMap`

@@ -4,7 +4,7 @@ This file provides guidance to Claude Code (claude.ai/code) when working with co
 
 ## 核心架构
 
-详见.claude/conventions/project-structrue.md
+详见.claude/conventions/project-structure.md
 
 ## 技术栈
 
@@ -18,7 +18,7 @@ This file provides guidance to Claude Code (claude.ai/code) when working with co
 
 # 游戏策划案
 
-策划案存储在 Asset/$projname/Designs目录下，所有游戏设计包括prototype相关文档和产出都会在这个目录或子目录下
+策划案存储在 Assets/$projname/Designs目录下，所有游戏设计包括prototype相关文档和产出都会在这个目录或子目录下
 
 ## 使用方式
 

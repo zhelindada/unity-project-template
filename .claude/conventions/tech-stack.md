@@ -1,28 +1,37 @@
+# 技术栈
+
+目标 Editor：Unity 6000.6.0f1。UPM 依赖以 `Packages/manifest.json` 为准，NuGet 运行库以 `Assets/packages.config` 为准。
+
 ## 关键依赖
 
-| 包 | 用途 |
-|---|---|
-| `jp.hadashikick.vcontainer` (1.17.0) | DI 容器，项目核心 IoC 框架 |
-| `com.cysharp.messagepipe` (1.8.1) | 消息管道，事件/消息解耦通信 |
-| `com.cysharp.messagepipe.vcontainer` (1.8.1) | MessagePipe 与 VContainer 集成 |
-| `com.cysharp.unitask` (2.5.10) | 零 GC 的 async/await 实现 |
-| `com.cysharp.r3` (1.3.0) | 响应式编程（Rx）库 |
-| `com.cysharp.zstring` (2.6.0) | 零分配字符串格式化 |
-| `com.unity.addressables` (1.22.3) | 资源管理（Addressables 系统） |
-| `com.esotericsoftware.spine.spine-unity` (4.2.x) | 2D 骨骼动画 |
-| `com.unity.cinemachine` (2.10.3) | 相机系统 |
-| `com.tayx.graphy` (3.0.5) | 性能监控（FPS/内存等） |
-| `com.unity.test-framework` (1.1.33) | 单元测试框架 |
+| 依赖 | 版本 / 来源 | 用途 |
+| --- | --- | --- |
+| Dada Unity Framework | 1.0.4，Git 提交 85e736a599d0c05998396092dee0c47073a9ea3e | 游戏框架 |
+| VContainer | 1.19.0，UPM Git | DI |
+| UniTask | 2.5.11，UPM Git | Unity 异步操作；不重复安装 NuGet UniTask |
+| MessagePipe / VContainer 集成 | 1.8.2，Framework 的 OpenUPM 依赖 | 消息通信 |
+| R3 | 1.3.1，UPM 集成 + NuGet 运行库 | 响应式数据 |
+| ZString | 2.6.0 | 字符串格式化 |
+| Addressables | 2.10.3，Framework 依赖 | 资源管理 |
+| Input System | 1.20.0 | 新输入系统，示例使用 Input Actions 或设备 API |
+| Universal RP | 17.6.0 | 渲染；自定义 Pass 使用 RenderGraph |
+| UGUI / TextMeshPro | 2.6.0 | UGUI；TMP 已随 UGUI 提供 |
+| Cinemachine | 6.6.0 | 相机；使用 Unity.Cinemachine 命名空间 |
+| Timeline | 6.6.0 | 时间轴 |
+| Test Framework | 1.8.0 | Unity 测试 |
 
+OpenUPM 包源覆盖 `com.cysharp`。Spine、Graphy 是按项目需求另行安装的可选插件，不属于当前基础依赖。
 
 ## 核心框架
 
-代码框架在 Asset/Framework 下，存放独立于项目的通用代码，这些代码可以被复用，如果没有需要不需要更改。
+Framework 通过远程 UPM 安装到 `Packages/com.dada.unity-framework/`，不内嵌到 `Assets/Framework` 或 `Assets/Dada`。
 
-当前项目专用的代码放到 Asset/$projname/Scripts下,且需要按照现有结构存放。
+当前程序集：`Dada.Foundations`、`Dada.Cores.Sim`、`Dada.Cores`、`Dada.Cores.UI`。业务代码按需引用；框架修改在独立仓库维护，通过更新已验证的 Git 提交引入。
 
-Constants - 静态/常量类型，如 文件路径。命名空间为 $projname.Constants
-Data - 数据类型，存放纯数据的类型，如业务用enum, Game, ***Data, 命名空间为 $projname.Data
-Controllers - 非UI类型控制器，用于存放继承了MonoBehaviour的控制器类，需要挂在游戏内。命名空间为 $projname.Controllers
-Services - 服务类，用于存放无需挂载的游戏逻辑类型，由vcontainer等DI框架初始化并管理。命名空间为 $projname.Services
-Views - 用于处理UI逻辑, 比如UIDocument的控制器,UIDocument,Canvas配套脚本 等。 命名空间为 $projname.Views
+业务代码存放在 `Assets/$projname/Scripts/`：
+
+- Constants：常量，命名空间 `$projname.Constants`。
+- Data：业务数据，命名空间 `$projname.Data`。
+- Controllers：游戏内 MonoBehaviour，命名空间 `$projname.Controllers`。
+- Services：由 DI 管理的游戏逻辑，命名空间 `$projname.Services`。
+- Views：UI 控制器，命名空间 `$projname.Views`。

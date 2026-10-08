@@ -34,7 +34,7 @@ color: cyan
 
 ### URP / HDRP 管线规则
 - 在 URP/HDRP 项目中永远不使用内置管线 Shader——始终使用 Lit/Unlit 等价物或自定义 Shader Graph
-- URP 自定义 Pass 使用 `ScriptableRendererFeature` + `ScriptableRenderPass`——永远不用 `OnRenderImage`（仅内置管线）
+- Unity 6.6 / URP 17.6 自定义 Pass 使用 `ScriptableRendererFeature` + `ScriptableRenderPass.RecordRenderGraph`，通过 RenderGraph 管理纹理和依赖——永远不用 `OnRenderImage`（仅内置管线）
 - HDRP 自定义 Pass 使用 `CustomPassVolume` 配合 `CustomPass`——与 URP API 不同，不可互换
 - Shader Graph：在 Material 设置中选择正确的 Render Pipeline 资源——为 URP 编写的图在 HDRP 中无法直接使用，需要移植
 
@@ -72,7 +72,13 @@ Sub-Graph："DissolveCore" 封装以上逻辑，可在角色材质间复用
 
 ### 自定义 URP Renderer Feature——描边 Pass
 ```csharp
-// OutlineRendererFeature.cs
+using UnityEngine;
+using UnityEngine.Rendering;
+using UnityEngine.Rendering.RenderGraphModule;
+using UnityEngine.Rendering.RenderGraphModule.Util;
+using UnityEngine.Rendering.Universal;
+
+// Unity 6.6 / URP 17.6：描边材质采样 _BlitTexture、场景深度和法线。
 public class OutlineRendererFeature : ScriptableRendererFeature
 {
     [System.Serializable]
@@ -87,34 +93,45 @@ public class OutlineRendererFeature : ScriptableRendererFeature
 
     public override void Create()
     {
-        _outlinePass = new OutlineRenderPass(settings);
+        _outlinePass = new OutlineRenderPass();
     }
 
     public override void AddRenderPasses(ScriptableRenderer renderer, ref RenderingData renderingData)
     {
+        if (settings.outlineMaterial == null || _outlinePass == null) return;
+        _outlinePass.Setup(settings.outlineMaterial, settings.renderPassEvent);
         renderer.EnqueuePass(_outlinePass);
     }
 }
 
 public class OutlineRenderPass : ScriptableRenderPass
 {
-    private OutlineRendererFeature.OutlineSettings _settings;
-    private RTHandle _outlineTexture;
+    private Material _material;
 
-    public OutlineRenderPass(OutlineRendererFeature.OutlineSettings settings)
+    public void Setup(Material material, RenderPassEvent passEvent)
     {
-        _settings = settings;
-        renderPassEvent = settings.renderPassEvent;
+        _material = material;
+        renderPassEvent = passEvent;
+        requiresIntermediateTexture = true;
+        ConfigureInput(ScriptableRenderPassInput.Depth | ScriptableRenderPassInput.Normal);
     }
 
-    public override void Execute(ScriptableRenderContext context, ref RenderingData renderingData)
+    public override void RecordRenderGraph(RenderGraph renderGraph, ContextContainer frameData)
     {
-        var cmd = CommandBufferPool.Get("Outline Pass");
-        // 使用描边材质 Blit——采样深度和法线做边缘检测
-        Blitter.BlitCameraTexture(cmd, renderingData.cameraData.renderer.cameraColorTargetHandle,
-            _outlineTexture, _settings.outlineMaterial, 0);
-        context.ExecuteCommandBuffer(cmd);
-        CommandBufferPool.Release(cmd);
+        var resources = frameData.Get<UniversalResourceData>();
+        if (_material == null || resources.isActiveTargetBackBuffer) return;
+
+        var source = resources.activeColorTexture;
+        if (!source.IsValid()) return;
+        var descriptor = renderGraph.GetTextureDesc(source);
+        descriptor.name = "Outline Camera Color";
+        descriptor.clearBuffer = false;
+        var destination = renderGraph.CreateTexture(descriptor);
+
+        var parameters = new RenderGraphUtils.BlitMaterialParameters(source, destination, _material, 0);
+        renderGraph.AddBlitPass(parameters, passName: "Outline Pass");
+        // 将输出交给后续 Pass；纹理由 RenderGraph 管理生命周期。
+        resources.cameraColor = destination;
     }
 }
 ```

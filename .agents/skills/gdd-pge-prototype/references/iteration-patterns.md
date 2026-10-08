@@ -16,7 +16,7 @@
 
 | 错误类型 | 常见原因 | 修复模式 |
 |---------|---------|---------|
-| `NullReferenceException` | 未赋值的 serialized field | 在 Start() 中用 FindObjectOfType / GetComponent 自动查找 |
+| `NullReferenceException` | 未赋值的 serialized field | 在初始化时通过序列化引用 / DI / TryGetComponent 获取依赖 |
 | `MissingReferenceException` | GameObject 已销毁但仍被引用 | 在 OnDestroy 中清理引用，或在访问前判空 |
 | `UnassignedReferenceException` | Inspector 中未拖入引用 | 同上，添加自动查找 fallback |
 | `IndexOutOfRangeException` | 数组/列表越界 | 添加 `if (index < list.Count)` 保护 |
@@ -54,8 +54,8 @@
 
 | 问题 | 根因 | 修复 |
 |------|------|------|
-| WASD 无效 | Input Manager 轴未配置 | 确认 Project Settings > Input Manager 中 Horizontal/Vertical 存在 |
-| 空格跳跃无效 | "Jump" 按钮名大小写错误 | 使用 `Input.GetButtonDown("Jump")` — J 大写 |
+| WASD 无效 | 输入未启用或 Game View 未获得焦点 | 启用 Action Map，确认输入后端为 Input System Package (New) |
+| 空格跳跃无效 | 跳跃 Action 未绑定或设备为空 | 绑定 Jump Action 到 Space；最小原型可使用 `Keyboard.current?.spaceKey.wasPressedThisFrame == true` |
 | New Input System 报错 | 项目使用新系统但脚本用旧 API | 读取 ProjectConfiguration，确认使用正确 API |
 
 ## 多轮迭代策略

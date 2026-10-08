@@ -26,7 +26,7 @@ Connect your game data (Model) to your interface (View) using modern high-perfor
 ### 1. Define the ViewModel
 Initialize `BindableProperty` fields that return formatted data from your model.
 ```csharp
-public BindableProperty<string> HealthText { get; }
+[Unity.Properties.CreateProperty] public BindableProperty<string> HealthText { get; }
 HealthText = BindableProperty<string>.Bind(() => $"HP: {model.hp}/{model.maxHp}");
 ```
 
@@ -39,7 +39,11 @@ root.dataSource = myViewModel;
 ### 3. Establish the Binding
 Use `SetBinding` on specific elements to link their properties (text, value, style) to paths in the ViewModel.
 ```csharp
-label.SetBinding("text", "HealthText.Value");
+label.SetBinding("text", new UnityEngine.UIElements.DataBinding
+{
+    dataSourcePath = new Unity.Properties.PropertyPath("HealthText.Value"),
+    bindingMode = UnityEngine.UIElements.BindingMode.ToTarget
+});
 ```
 
 ## Key Principle

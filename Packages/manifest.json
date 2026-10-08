@@ -1,12 +1,12 @@
 {
   "dependencies": {
-    "com.dada.unity-framework": "https://github.com/zhelindada/unity-framework.git",
+    "com.dada.unity-framework": "https://github.com/zhelindada/unity-framework.git#85e736a599d0c05998396092dee0c47073a9ea3e",
     "com.cysharp.unitask": "https://github.com/Cysharp/UniTask.git?path=src/UniTask/Assets/Plugins/UniTask#2.5.11",
-    "com.github-glitchenzo.nugetforunity": "https://github.com/GlitchEnzo/NuGetForUnity.git?path=src/NuGetForUnity",
+    "com.github-glitchenzo.nugetforunity": "https://github.com/GlitchEnzo/NuGetForUnity.git?path=src/NuGetForUnity#acc1c7bc9ea34c33b830e40316fca52553878d29",
     "com.coffee.softmask-for-ugui": "https://github.com/mob-sakai/SoftMaskForUGUI.git?path=Packages/src#3.6.5",
     "com.coffee.ui-effect": "https://github.com/mob-sakai/UIEffect.git?path=Packages/src#5.11.7",
     "com.coffee.ui-particle": "https://github.com/mob-sakai/ParticleEffectForUGUI.git#4.14.1",
-    "com.cysharp.csprojmodifier": "https://github.com/Cysharp/CsprojModifier.git?path=src/CsprojModifier/Assets/CsprojModifier",
+    "com.cysharp.csprojmodifier": "https://github.com/Cysharp/CsprojModifier.git?path=src/CsprojModifier/Assets/CsprojModifier#160444836baf08941528a3667220600cb9047452",
     "com.unity.collab-proxy": "2.13.6",
     "com.unity.ide.rider": "3.0.38",
     "com.unity.ide.visualstudio": "2.0.26",
@@ -50,6 +50,15 @@
     "com.unity.modules.wind": "1.0.0",
     "com.unity.modules.xr": "1.0.0",
     "com.unity.cinemachine": "6.6.0",
-    "com.gladekit.mcp-bridge": "https://github.com/Glade-tool/glade-mcp-unity.git?path=/unity-bridge"
-  }
+    "com.gladekit.mcp-bridge": "https://github.com/Glade-tool/glade-mcp-unity.git?path=/unity-bridge#a1e34ce3aad57d812f6235d4bb36491a870988fb"
+  },
+  "scopedRegistries": [
+    {
+      "name": "OpenUPM",
+      "url": "https://package.openupm.com",
+      "scopes": [
+        "com.cysharp"
+      ]
+    }
+  ]
 }

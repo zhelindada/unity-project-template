@@ -92,6 +92,10 @@ public class NetworkSetup : MonoBehaviour
 
 ### 服务端权威玩家控制器
 ```csharp
+using UnityEngine;
+using UnityEngine.InputSystem;
+using Unity.Netcode;
+
 public class PlayerController : NetworkBehaviour
 {
     [SerializeField] private float _moveSpeed = 5f;
@@ -112,7 +116,10 @@ public class PlayerController : NetworkBehaviour
     private void Update()
     {
         if (!IsOwner) return;
-        var input = new Vector2(Input.GetAxisRaw("Horizontal"), Input.GetAxisRaw("Vertical")).normalized;
+        var keyboard = Keyboard.current;
+        var input = keyboard == null ? Vector2.zero : new Vector2(
+            (keyboard.dKey.isPressed ? 1f : 0f) - (keyboard.aKey.isPressed ? 1f : 0f),
+            (keyboard.wKey.isPressed ? 1f : 0f) - (keyboard.sKey.isPressed ? 1f : 0f)).normalized;
         _clientPredictedPosition += new Vector3(input.x, 0, input.y) * _moveSpeed * Time.deltaTime;
         transform.position = _clientPredictedPosition;
         SendInputServerRpc(input, NetworkManager.LocalTime.Tick);

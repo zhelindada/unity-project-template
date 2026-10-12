@@ -11,7 +11,7 @@
 | UniTask | 2.5.11，UPM Git | Unity 异步操作；不重复安装 NuGet UniTask |
 | MessagePipe / VContainer 集成 | 1.8.2，Framework 的 OpenUPM 依赖 | 消息通信 |
 | R3 | 1.3.1，UPM 集成 + NuGet 运行库 | 响应式数据 |
-| ZString | 2.6.0 | 字符串格式化 |
+| ZString | 2.6.0，Framework 的 OpenUPM 依赖；不重复安装 NuGet ZString | 字符串格式化 |
 | Addressables | 2.10.3，Framework 依赖 | 资源管理 |
 | Input System | 1.20.0 | 新输入系统，示例使用 Input Actions 或设备 API |
 | Universal RP | 17.6.0 | 渲染；自定义 Pass 使用 RenderGraph |

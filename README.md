@@ -8,6 +8,14 @@ Framework 通过 Unity Package Manager 从 [unity-framework](https://github.com/
 
 框架程序集为 `Dada.Foundations`、`Dada.Cores.Sim`、`Dada.Cores` 和 `Dada.Cores.UI`，不要复制旧 Framework 目录。版本与目录约定见 `.claude/conventions/tech-stack.md` 和 `project-structure.md`。
 
+### 首次打开时提示找不到 R3
+
+UPM 的 `com.cysharp.r3` 只提供 Unity 集成，核心 `R3.dll` 需要 NuGetForUnity 还原到 `Assets/Packages`。`Assets/NuGet.config` 必须只有一个 `<config>` 节点，`repositoryPath` 为 `./Packages`（相对于 Assets），不能指向项目外的用户缓存。
+
+ZString 已由 Framework 的 UPM 依赖提供完整实现，不要再安装 NuGet ZString。若出现 `CS0433` 提示两份 `ZString`，移除 `Assets/packages.config` 中的 ZString 条目及已还原的 `Assets/Packages/ZString.*` 包目录，再重新编译。
+
+若首次编译时出现 `R3` / `Observable<>` 等缺失错误，进入 Unity Safe Mode，等待 UPM 安装完成，再执行 **NuGet → Restore Packages**。还原后等待重新编译；不要修改 `Library/PackageCache` 内的框架脚本。
+
 初始化时将 `Assets/$projname` 重命名为实际项目名称，并同步调整 Build Settings 中的场景路径。
 
 ## 插件导入

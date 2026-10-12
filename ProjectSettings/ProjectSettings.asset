@@ -3,7 +3,7 @@
 --- !u!129 &1
 PlayerSettings:
   m_ObjectHideFlags: 0
-  serializedVersion: 29
+  serializedVersion: 30
   productGUID: 3c72c65a16f0acb438eed22b8b16c24a
   AndroidProfiler: 0
   AndroidFilterTouchesWhenObscured: 0
@@ -54,7 +54,7 @@ PlayerSettings:
   mipStripping: 0
   numberOfMipsStripped: 0
   numberOfMipsStrippedPerMipmapLimitGroup: {}
-  m_StackTraceTypes: 010000000100000001000000010000000100000001000000
+  m_StackTraceTypes: 010000000100000001000000010000000100000001000000i
   iosShowActivityIndicatorOnLoading: -1
   androidShowActivityIndicatorOnLoading: -1
   iosUseCustomAppBackgroundBehavior: 0
@@ -150,7 +150,10 @@ PlayerSettings:
   visionOSBundleVersion: 1.0
   tvOSBundleVersion: 1.0
   bundleVersion: 0.1.0
-  preloadedAssets: []
+  preloadedAssets:
+  - {fileID: 11400000, guid: f61e483a0dc61d3419aa899ef2c0a809, type: 2}
+  - {fileID: 11400000, guid: 91878cff15265844e85ee1fe595640c2, type: 2}
+  - {fileID: 11400000, guid: ae370f06e81a59045adfd00d5a885526, type: 2}
   metroInputSource: 0
   wsaTransparentSwapchain: 0
   xboxOneDisableKinectGpuReservation: 1
@@ -162,7 +165,7 @@ PlayerSettings:
   allowHDRDisplaySupport: 0
   useHDRDisplay: 0
   hdrBitDepth: 0
-  m_ColorGamuts: 00000000
+  m_ColorGamuts: 00000000i
   targetPixelDensity: 30
   resolutionScalingMode: 0
   resetResolutionOnWindowResize: 0
@@ -534,13 +537,13 @@ PlayerSettings:
   m_BuildTargetGraphicsJobMode: []
   m_BuildTargetGraphicsAPIs:
   - m_BuildTarget: iOSSupport
-    m_APIs: 10000000
+    m_APIs: 10000000i
     m_Automatic: 1
   - m_BuildTarget: AndroidPlayer
-    m_APIs: 150000000b000000
+    m_APIs: 150000000b000000i
     m_Automatic: 0
   - m_BuildTarget: WindowsStandaloneSupport
-    m_APIs: 0200000012000000
+    m_APIs: 0200000012000000i
     m_Automatic: 0
   m_DefaultShaderChunkSizeInMB: 16
   m_DefaultShaderChunkCount: 0
@@ -565,7 +568,7 @@ PlayerSettings:
   m_BuildTargetDefaultTextureCompressionFormat:
   - serializedVersion: 3
     m_BuildTarget: Android
-    m_Formats: 03000000
+    m_Formats: 03000000i
   playModeTestRunnerEnabled: 0
   runPlayModeTestAsEditModeTest: 0
   actionOnDotNetUnhandledException: 1
@@ -833,7 +836,9 @@ PlayerSettings:
   webGLCloseOnQuit: 0
   webWasm2023: 1
   webEnableSubmoduleStrippingCompatibility: 0
-  scriptingDefineSymbols: {}
+  webProgressiveAssetLoading: 0
+  scriptingDefineSymbols:
+    Standalone: GLADE_CINEMACHINE;GLADE_INPUT_SYSTEM;GLADE_UGUI
   additionalCompilerArguments: {}
   platformArchitecture: {}
   scriptingBackend:
@@ -851,6 +856,7 @@ PlayerSettings:
   scriptingRuntimeVersion: 1
   gcIncremental: 1
   gcWBarrierValidation: 0
+  managedCodeVariant: {}
   apiCompatibilityLevelPerPlatform: {}
   editorAssembliesCompatibilityLevel: 1
   m_RenderingPath: 1
@@ -948,4 +954,5 @@ PlayerSettings:
   androidVulkanAllowFilterList: []
   androidVulkanDeviceFilterListAsset: {fileID: 0}
   d3d12DeviceFilterListAsset: {fileID: 0}
+  webGPUDeviceFilterListAsset: {fileID: 0}
   allowedHttpConnections: 3

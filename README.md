@@ -2,7 +2,9 @@
 
 Unity **6000.6.0f1** 模板，使用 URP 17.6、新 Input System 和 UGUI 2.6 / UI Toolkit。
 
-Framework 通过 Unity Package Manager 从 [unity-framework](https://github.com/zhelindada/unity-framework) 安装，不内嵌到 Assets。当前固定为 1.0.4 对应的 Git 提交 `85e736a599d0c05998396092dee0c47073a9ea3e`。
+Framework 通过 Unity Package Manager 从 [unity-framework](https://github.com/zhelindada/unity-framework) 安装，不内嵌到 Assets。当前固定为 1.0.10 对应的 Git 提交 `943c103784260e8c52feed4481a3d68ef8b284c2`。
+
+框架仓库已提交 Selection 目录与脚本的 .meta 文件。Unity 刷新依赖时会导入固定版本的文件，GUID 保持稳定。
 
 `Packages/manifest.json` 配置 UPM / Git 依赖与 OpenUPM 包源。使用 6000.6.0f1 首次打开项目后由 Package Manager 解析依赖并生成 `Packages/packages-lock.json`。R3 等 NuGet 运行库由 NuGetForUnity 按 `Assets/packages.config` 还原；UniTask 只使用 UPM 版本。
 

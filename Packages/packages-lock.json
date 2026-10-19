@@ -73,7 +73,7 @@
       "url": "https://package.openupm.com"
     },
     "com.dada.unity-framework": {
-      "version": "https://github.com/zhelindada/unity-framework.git#85e736a599d0c05998396092dee0c47073a9ea3e",
+      "version": "https://github.com/zhelindada/unity-framework.git#943c103784260e8c52feed4481a3d68ef8b284c2",
       "depth": 0,
       "source": "git",
       "dependencies": {
@@ -91,7 +91,7 @@
         "com.unity.modules.uielements": "1.0.0",
         "jp.hadashikick.vcontainer": "1.19.0"
       },
-      "hash": "85e736a599d0c05998396092dee0c47073a9ea3e"
+      "hash": "943c103784260e8c52feed4481a3d68ef8b284c2"
     },
     "com.github-glitchenzo.nugetforunity": {
       "version": "https://github.com/GlitchEnzo/NuGetForUnity.git?path=src/NuGetForUnity#acc1c7bc9ea34c33b830e40316fca52553878d29",

@@ -6,7 +6,7 @@
 
 | 依赖 | 版本 / 来源 | 用途 |
 | --- | --- | --- |
-| Dada Unity Framework | 1.0.10，Git 提交 5ad5034cf474947d87b0a1cb9b487bc44a11b53d | 游戏框架 |
+| Dada Unity Framework | 1.0.10，Git 提交 818a0f554586df5a03f560310c492ee0092a9a53 | 游戏框架 |
 | VContainer | 1.19.0，UPM Git | DI |
 | UniTask | 2.5.11，UPM Git | Unity 异步操作；不重复安装 NuGet UniTask |
 | MessagePipe / VContainer 集成 | 1.8.2，Framework 的 OpenUPM 依赖 | 消息通信 |

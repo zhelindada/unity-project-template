@@ -1,6 +1,6 @@
 {
   "dependencies": {
-    "com.dada.unity-framework": "https://github.com/zhelindada/unity-framework.git#943c103784260e8c52feed4481a3d68ef8b284c2",
+    "com.dada.unity-framework": "https://github.com/zhelindada/unity-framework.git#5ad5034cf474947d87b0a1cb9b487bc44a11b53d",
     "com.cysharp.unitask": "https://github.com/Cysharp/UniTask.git?path=src/UniTask/Assets/Plugins/UniTask#2.5.11",
     "com.github-glitchenzo.nugetforunity": "https://github.com/GlitchEnzo/NuGetForUnity.git?path=src/NuGetForUnity#acc1c7bc9ea34c33b830e40316fca52553878d29",
     "com.coffee.softmask-for-ugui": "https://github.com/mob-sakai/SoftMaskForUGUI.git?path=Packages/src#3.6.5",

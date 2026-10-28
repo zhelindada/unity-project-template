@@ -2,13 +2,13 @@
 
 Unity **6000.6.0f1** 模板，使用 URP 17.6、新 Input System 和 UGUI 2.6 / UI Toolkit。
 
-Framework 通过 Unity Package Manager 从 [unity-framework](https://github.com/zhelindada/unity-framework) 安装，不内嵌到 Assets。当前固定为 1.0.10 对应的 Git 提交 `943c103784260e8c52feed4481a3d68ef8b284c2`。
+Framework 通过 Unity Package Manager 从 [unity-framework](https://github.com/zhelindada/unity-framework) 安装，不内嵌到 Assets。当前固定为 1.0.10 对应的 Git 提交 `5ad5034cf474947d87b0a1cb9b487bc44a11b53d`。
 
-框架仓库已提交 Selection 目录与脚本的 .meta 文件。Unity 刷新依赖时会导入固定版本的文件，GUID 保持稳定。
+框架仓库已提交 Selection 与 Data 目录、脚本及 Def 示例的 .meta 文件。Unity 刷新依赖时会导入固定版本的文件，GUID 保持稳定。
 
 `Packages/manifest.json` 配置 UPM / Git 依赖与 OpenUPM 包源。使用 6000.6.0f1 首次打开项目后由 Package Manager 解析依赖并生成 `Packages/packages-lock.json`。R3 等 NuGet 运行库由 NuGetForUnity 按 `Assets/packages.config` 还原；UniTask 只使用 UPM 版本。
 
-框架程序集为 `Dada.Foundations`、`Dada.Cores.Sim`、`Dada.Cores` 和 `Dada.Cores.UI`，不要复制旧 Framework 目录。版本与目录约定见 `.claude/conventions/tech-stack.md` 和 `project-structure.md`。
+框架程序集为 `Dada.Data`、`Dada.Foundations`、`Dada.Cores.Sim`、`Dada.Cores` 和 `Dada.Cores.UI`，不要复制旧 Framework 目录。版本与目录约定见 `.claude/conventions/tech-stack.md` 和 `project-structure.md`。
 
 ### 首次打开时提示找不到 R3
 
@@ -16,7 +16,7 @@ UPM 的 `com.cysharp.r3` 只提供 Unity 集成，核心 `R3.dll` 需要 NuGetFo
 
 ZString 已由 Framework 的 UPM 依赖提供完整实现，不要再安装 NuGet ZString。若出现 `CS0433` 提示两份 `ZString`，移除 `Assets/packages.config` 中的 ZString 条目及已还原的 `Assets/Packages/ZString.*` 包目录，再重新编译。
 
-若首次编译时出现 `R3` / `Observable<>` 等缺失错误，进入 Unity Safe Mode，等待 UPM 安装完成，再执行 **NuGet → Restore Packages**。还原后等待重新编译；不要修改 `Library/PackageCache` 内的框架脚本。
+若首次编译时出现 `R3` / `Observable<>` 等缺失错误，在启动提示中选择 **Ignore** 继续启动，等待 UPM 安装完成及 NuGetForUnity 自动还原，必要时执行 **NuGet → Restore Packages**。批处理/CI 首次打开前应先使用 NuGetForUnity CLI 执行 `nugetforunity restore <项目路径>`。还原后等待重新编译；不要修改 `Library/PackageCache` 内的框架脚本。
 
 初始化时将 `Assets/$projname` 重命名为实际项目名称，并同步调整 Build Settings 中的场景路径。
 

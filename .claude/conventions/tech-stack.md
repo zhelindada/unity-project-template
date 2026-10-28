@@ -6,7 +6,7 @@
 
 | 依赖 | 版本 / 来源 | 用途 |
 | --- | --- | --- |
-| Dada Unity Framework | 1.0.10，Git 提交 943c103784260e8c52feed4481a3d68ef8b284c2 | 游戏框架 |
+| Dada Unity Framework | 1.0.10，Git 提交 5ad5034cf474947d87b0a1cb9b487bc44a11b53d | 游戏框架 |
 | VContainer | 1.19.0，UPM Git | DI |
 | UniTask | 2.5.11，UPM Git | Unity 异步操作；不重复安装 NuGet UniTask |
 | MessagePipe / VContainer 集成 | 1.8.2，Framework 的 OpenUPM 依赖 | 消息通信 |
@@ -26,7 +26,7 @@ OpenUPM 包源覆盖 `com.cysharp`。Spine、Graphy 是按项目需求另行安�
 
 Framework 通过远程 UPM 安装到 `Packages/com.dada.unity-framework/`，不内嵌到 `Assets/Framework` 或 `Assets/Dada`。
 
-当前程序集：`Dada.Foundations`、`Dada.Cores.Sim`、`Dada.Cores`、`Dada.Cores.UI`。业务代码按需引用；框架修改在独立仓库维护，通过更新已验证的 Git 提交引入。
+当前程序集：`Dada.Data`、`Dada.Foundations`、`Dada.Cores.Sim`、`Dada.Cores`、`Dada.Cores.UI`。业务代码按需引用；框架修改在独立仓库维护，通过更新已验证的 Git 提交引入。
 
 业务代码存放在 `Assets/$projname/Scripts/`：
 
